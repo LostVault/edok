@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
-# ------------- ИМПОРТ МОДУЛЕЙ
 
+# ------------- УСТАНАВЛИВАЕМ НУЖНЫЕ МОДУЛИ
+# pip install -u discord.py
+# pip install -u stdout
+# pip install -u aiosqlite
+# pip install -u discord-py-slash-command
+
+
+# ------------- ИМПОРТ МОДУЛЕЙ
 import logging  # Импортируем модуль логирования
 
 import aiosqlite  # Импортируем модуль работы с базами SQLite
@@ -9,7 +16,7 @@ from discord.ext import commands  # Импортируем команды из �
 from discord.ext.commands import has_permissions
 from discord_slash import SlashCommand, SlashContext  # Импортируем модуль команд с косой чертой (slash)
 # from discord_slash.utils.manage_commands import create_choice, create_option
-from sys import stdout
+from sys import stdout # Импортируем модуль для регистрации событий приложения
 
 import config  # Импортируем настройки приложения
 
@@ -17,7 +24,7 @@ import config  # Импортируем настройки приложения
 
 
 # ------------- СОЗДАЁМ ПРИЛОЖЕНИЕ И НАЗЫВАЕМ ЕГО CLIENT
-client = commands.Bot(description="Test bot", command_prefix=commands.when_mentioned_or(config.prefix),
+client = commands.Bot(description="E.D.O.K. — Elite Dangerous Outfitting Keeper", command_prefix=commands.when_mentioned_or(config.prefix),
                       case_insensitive=True, help_command=None)
 
 
@@ -28,20 +35,21 @@ slash = SlashCommand(client, sync_commands=True)
 # ------------- СОЗДАЁМ ОБРАБОТКУ КОМАНДЫ С КОСОЙ ЧЕРТОЙ ЧЕРЕЗ СОЗДАННОЕ ПРИЛОЖЕНИЕ // КОНЕЦ
 
 
-# ------------- ВЫВОДИМ ДАННЫЕ ПОДКЛЮЧЕНИЯ ПРИЛОЖЕНИЯ В КОНСОЛЬ 
+# ------------- РЕГИСТРИРУЕМ СОБЫТИЯ ПРИЛОЖЕНИЯ
 logging.basicConfig(level=logging.WARNING,
                     format='%(asctime)s - %(levelname)s - %(process)d:%(thread)d: %(module)s:%(lineno)d: %(message)s')
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-# ------------- ВЫВОДИМ ДАННЫЕ ПОДКЛЮЧЕНИЯ ПРИЛОЖЕНИЯ В КОНСОЛЬ // КОНЕЦ
+
+# ------------- РЕГИСТРИРУЕМ СОБЫТИЯ ПРИЛОЖЕНИЯ // КОНЕЦ
 
 
 # ------------- ВЫВОДИМ ДАННЫЕ ПРИЛОЖЕНИЯ ПРИ ПОДКЛЮЧЕНИЕ В КОНСОЛЬ
 @client.event
 async def on_ready():
-    client.sql_conn = await aiosqlite.connect('Wormhole.sqlite')
+    client.sql_conn = await aiosqlite.connect('Edok.sqlite')
     await client.sql_conn.execute('create table if not exists black_list (userid integer not null, add_timestamp text '
                                   'default current_timestamp, reason text, banner_id integer);')
 
@@ -49,7 +57,6 @@ async def on_ready():
     # Показывает имя приложения, указанное на discordapp.com
     print(f' APP Username: {client.user} ')
     print(f' Using token {config.token[0:2]}...{config.token[-3:-1]}')
-    print(f' Using global channel {config.globalchannel}')
     # Показывает ID приложения указанное на discordapp.com
     print(' APP Client ID: {0.user.id} '.format(client))
     print('Link for connection: https://discordapp.com/oauth2/authorize?&client_id={0.user.id}'
@@ -63,15 +70,18 @@ async def on_ready():
     # Изменяем статус приложения
     await client.change_presence(status=discord.Status.online, activity=discord.Game('Elite Dangerous'))
 
-    # Отправляем сообщение в общий канал
-    emStatusOn = discord.Embed(title='⚠ • ВНИМАНИЕ!', description='Приложение запущено.', colour=0x90D400)
-    emStatusOn.set_image(
-        url="https://media.discordapp.net/attachments/682731260719661079/682731350922493952/ED1.gif")
-    await send_to_servers(embed=emStatusOn, delete_after=13)
-    # Отправляем сообщение
-
 
 # ------------- ВЫВОДИМ ДАННЫЕ ПРИЛОЖЕНИЯ ПРИ ПОДКЛЮЧЕНИЕ В КОНСОЛЬ // КОНЕЦ
+
+
+# ------------- ВЫВОДИМ СООБЩЕНИЯ ПОЛЬЗОВАТЕЛЕЙ В КОНСОЛЬ ПРИЛОЖЕНИЯ
+@client.event
+async def on_message(message):
+    # Дублирует сообщения в консоль приложения
+    print('{0.guild} / #{0.channel} / {0.author}: {0.content}'.format(message))
+
+
+# ------------- ВЫВОДИМ СООБЩЕНИЯ ПОЛЬЗОВАТЕЛЕЙ В КОНСОЛЬ ПРИЛОЖЕНИЯ // КОНЕЦ
 
 
 # ------------- ОБРАБАТЫВАВЕМ ОШИБКИ КОММАНД
