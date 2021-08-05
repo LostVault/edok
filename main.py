@@ -168,7 +168,7 @@ async def allships(ctx):
 @slash.slash(name="cobramk3", description="Список сборок для «Cobra Mk III»")
 async def cobramk3(ctx):
     # Загружаем картинку корабля
-    file = discord.File("source/images/cobramk3.png", filename="dbe.png")
+    file = discord.File("sources/images/cobramk3.png", filename="dbe.png")
     # Создаём сообщение
     emShipsCobraMK3 = discord.Embed(title='Cobra Mk III', description='Настоящий многофункциональный корабль. Cobra Mk III отлично подходит для целевого спектра задач. В бою он способен нанести ощутимый урон и при необходимости может быстро покинуть сражение, а его просторный трюм позволяет перевозить большой объём грузов, чем другие корабли сходного размера и ценовой категории. Cobra также отлично подходит для исследователей благодаря своему вместительному топливному баку и шести внутренним отделениям.', colour=0x2F3136)
     emShipsCobraMK3.add_field(name='CMDR GIF Community', value='n/a')
@@ -196,7 +196,7 @@ async def cobramk3(ctx):
 @slash.slash(name="dbe", description="Список сборок для «Diamondback Explorer»")
 async def dbe(ctx):
     # Загружаем картинку корабля
-    file = discord.File("source/images/diamondbackexplorer.png", filename="dbe.png")
+    file = discord.File("sources/images/diamondbackexplorer.png", filename="dbe.png")
     # Создаём сообщение
     emShipsDBE = discord.Embed(title='Diamondback Explorer', description='Более крупный собрат Diamondback Scout, также представляет собой корабль двойного назначения, ориентированный на бои и исследования. Выдающаяся огневая мощь и система гнёзд Explorer делают более универсальным по сравнению со Scout, а большая дальность прыжка и превосходная теплоэффективность отлично подойдут исследователям.', colour=0x2F3136)
     emShipsDBE.add_field(name='CMDR GIF Community', value='• [DBE за 77](https://s.orbis.zone/czgy)\n• Автор: <@184299323624783872>')
@@ -232,7 +232,7 @@ async def dbe(ctx):
 @slash.slash(name='courier', description='Список сборок для «Imperial Courier»')
 async def courier(ctx):
     # Загружаем картинку корабля
-    file = discord.File('source/images/imperialcourier.png', filename='courier.png')
+    file = discord.File('sources/images/imperialcourier.png', filename='courier.png')
     # Создаём сообщение
     emShipsCourier = discord.Embed(title='Imperial Courier', description='Одно из самых компанктных судов на рынке, Imperial Courier представляет собой лёгкий боевой корабль от Gutamaya. Он может похвастаться маневренностью, которая составит конкуренцию даже Viper MkIII, и способен с лёгкостью уходить от огня противника, в то время как три средних гнезда сделали его популярным среди пилотов, ищущих хорошее сочетание силы и стиля.', colour=0x2F3136)
     emShipsCourier.add_field(name='CMDR GIF Community', value='• [Скоростной для планетарных операций](https://s.orbis.zone/cdx_)\n• Авторы: <@232550259841171466>')
@@ -264,7 +264,7 @@ async def courier(ctx):
 @slash.slash(name='sidewinder', description='Список сборок для «Sidewinder»')
 async def sidewinder(ctx):
     # Загружаем картинку корабля
-    file = discord.File('source/images/sidewinder.png', filename='sidewinder.png')
+    file = discord.File('sources/images/sidewinder.png', filename='sidewinder.png')
     # Создаём сообщение
     emShipsCourier = discord.Embed(title='Sidewinder', description='Многоцелевой корабль производства Faulcon DeLacy. Его универсальность и сравнительно низка цена заработали ему популярность среди начинающих пилотов, но пусть вас не обманывает репутация Sidewinder как корабля для новичков. Данная модель — одна из самых маневренных на всём рынке.', colour=0x2F3136)
     emShipsCourier.add_field(name='CMDR GIF Community', value='n/a')
