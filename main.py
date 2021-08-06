@@ -154,7 +154,7 @@ async def allships(ctx):
     # Создаём сообщение
     emShipsAll = discord.Embed(title='СПИСОК КОМАНД ПО КОРАБЛЯМ', description='Список всех сборок кораблей которые на данный момент доступны у бота.', colour=0x2F3136)
     emShipsAll.add_field(name='Малые', value='• Adder\n• Cobra MkIII `/cobramk3`\n• Cobra MkIV\n• Diamondback Explorer `/dbe`\n• Diamondback Scout\n• Dolphin\n• Eagle\n• Hauler\n• Imperial Courier `/courier`\n• Imperial Eagle\n• Sidewinder `/sidewinder`\n• Viper\n• Viper MkIV\n• Vulture `/vulture`')
-    emShipsAll.add_field(name='Средние', value='• Alliance Challenger `/challenger`\n• Alliance Chieftain `/chieftain`\n• Alliance Crusader `/crusader`\n• Asp Explorer `/aspe`\n• Asp Scout `/asps`\n• Federal Assault Ship `/federalas`\n• Federal Dropship\n• Federal Gunship\n• Fer-de-Lance `/fdl`\n• Keelback\n• Krait MkII `/krait`\n• Krait Phantom `/phantom`\n• Mamba `/mamba`\n• Python `/python`\n• Type-6 Transporter `/type6`')
+    emShipsAll.add_field(name='Средние', value='• Alliance Challenger `/challenger`\n• Alliance Chieftain `/chieftain`\n• Alliance Crusader `/crusader`\n• Asp Explorer `/aspe`\n• Asp Scout\n• Federal Assault Ship `/fas`\n• Federal Dropship\n• Federal Gunship\n• Fer-de-Lance `/fdl`\n• Keelback\n• Krait MkII `/krait`\n• Krait Phantom `/phantom`\n• Mamba `/mamba`\n• Python `/python`\n• Type-6 Transporter `/type6`')
     emShipsAll.add_field(name='Большие', value='• Anaconda `/anaconda`\n• Beluga Liner\n• Federal Corvette `/corvette`\n• Imperial Clipper\n• Imperial Cutter `/cutter`\n• Orca\n• Type-7 Transporter `/type7`\n• Type-9 Heavy `/type9`\n• Type-10 Defender `/type10`', inline=False)
     emShipsAll.set_footer(text=client.user.name)
     # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
@@ -341,6 +341,64 @@ async def chieftain(ctx):
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Chieftain // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Crusader
+@slash.slash(name='crusader', description='Список сборок для «Alliance Crusader»')
+async def crusader(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/alliancecrusader.png', filename='alliancecrusader.png')
+    # Создаём сообщение
+    emShipsChieftain = discord.Embed(title='Alliance Crusader', description='Представляет собой видоизмененную модель корабля Alliance Chieftain, от которого отличается в первую очередь наличием отсека для истребителя. Crusader имеет три внутренних боевых отсека и место для экипажа из двух человек, что делает его идеально подходящим для практически любого сражения.', colour=0x2F3136)
+    emShipsChieftain.add_field(name='CMDR GIF Community', value='n/a')
+    emShipsChieftain.add_field(name='Dark Enterprise', value='• [PvE Crusader](https://s.orbis.zone/3jro)\n• [Crusader на дробашах](https://s.orbis.zone/3jrs)\n• Автор: <@270156067055468544>')
+    emShipsChieftain.set_thumbnail(url="attachment://alliancecrusader.png")
+    emShipsChieftain.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsChieftain, delete_after=300)
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Crusader // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Explorer
+@slash.slash(name='aspe', description='Список сборок для «Asp Explorer»')
+async def aspe(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/aspexplorer.png', filename='aspexplorer.png')
+    # Создаём сообщение
+    emShipsChieftain = discord.Embed(title='Asp Explorer', description='Часто продаётся в качестве идеального корабля для пилотов, подбирающих свой первый корабль для нескольких экипажей (Multi-Crew). Его большая дальность прыжка и широкий фонарь кабины с хорошим обзором заработали этому творению Lakon Spaceways популярность среди исследователей, но универсальность данной модели также делает его отличным вариантом для торговцев и боевых пилотов. Для Asp Explorer подходят посадочные площадки среднего размера.', colour=0x2F3136)
+    emShipsChieftain.add_field(name='CMDR GIF Community', value='• [ASP для начинающих](https://s.orbis.zone/cl82)\n• Автор: <@360125693729964043>')
+    emShipsChieftain.add_field(name='Dark Enterprise', value='• [ASP Исследователь](https://s.orbis.zone/3oi8)\n• [Боевой АСП](https://s.orbis.zone/3oi9)\n• [ASP Майнер 3.3](https://s.orbis.zone/3oia)\n• [ASP Майнер пейнита](https://s.orbis.zone/3utw)\n• Автор: <@270156067055468544>')
+    emShipsChieftain.set_thumbnail(url="attachment://aspexplorer.png")
+    emShipsChieftain.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsChieftain, delete_after=300)
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Explorer // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Scout
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Scout // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Assault Ship
+@slash.slash(name='fas', description='Список сборок для «Federal Assault Ship»')
+async def fas(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/federalassaultship.png', filename='federalassaultship.png')
+    # Создаём сообщение
+    emShipsChieftain = discord.Embed(title='Federal Assault Ship', description='Многие из клиентов Core Dynamics считали, что их десантные корабли должны выполнять более определённые задачи. Ответом на эти запросы стал атакующий корабль. Он лучше приспособлен для боевых действий, чем исходный вариант. У него выше маневренность, а вооружение мощнее у расположено удачнее. Ради этих модификаций пришлось пожертвовать вместительностью, вследствие чего он менее универсален, но лучше справляется со своей специализированной ролью.', colour=0x2F3136)
+    emShipsChieftain.add_field(name='CMDR GIF Community', value='• [PVE с рельсами](https://s.orbis.zone/cdxu)\n• [AX с щитами и дронами](https://s.orbis.zone/cdye)\n• Автор: <@232550259841171466>')
+    emShipsChieftain.add_field(name='Dark Enterprise', value='• [Бронированный FAS с торпедами](https://s.orbis.zone/2_we)\n• Автор: <@189334900405436416>\n\n• [FAS 355](https://s.orbis.zone/3jti)\n• [FAS Explorer](https://s.orbis.zone/adp)\n• [FAS AX](https://s.orbis.zone/42ww)\n• [PVE FAS](https://s.orbis.zone/3jtp)\n• [ФАС с мультиками и плазмой](https://s.orbis.zone/3jts)\n• Автор: <@270156067055468544>')
+    emShipsChieftain.set_thumbnail(url="attachment://federalassaultship.png")
+    emShipsChieftain.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsChieftain, delete_after=300)
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Assault Ship // КОНЕЦ
 
 
 # Генерируемый токен при создание приложения на discordapp.com, необходимый для подключения к серверу. //
