@@ -281,6 +281,68 @@ async def sidewinder(ctx):
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder // КОНЕЦ
 
 
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper MkIV
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper MkIV // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Vulture
+@slash.slash(name='vulture', description='Список сборок для «Vulture»')
+async def vulture(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/vulture.png', filename='vulture.png')
+    # Создаём сообщение
+    emShipsVulture = discord.Embed(title='Vulture', description='Создавая Vulture, Core Dynamics выжали всё возможное из своих технологий, оснастив компактный корпус корабля двумя большими гнёздами. Производитель также снабдил Vulture мощными маневровыми двигателями, благодаря которым корабль способен уклоняться от вражеского огня, одновременно нанося значительный урон, что делает Vulture крайне опасным противником.', colour=0x2F3136)
+    emShipsVulture.add_field(name='CMDR GIF Community', value='• [2 банки и дробовики](https://s.orbis.zone/cdyg)\n• Автор: <@232550259841171466>')
+    emShipsVulture.add_field(name='Dark Enterprise', value='• [Cтервятник для PVE](https://s.orbis.zone/7s3j)\n• [Стервятник на дробашах Хадсона](https://s.orbis.zone/7s3o)\n• Автор: <@270156067055468544>\n\n• [Vulture с пучками](https://s.orbis.zone/22rt)\n• Автор: <@269516916631142411>\n\n• [Вультура с улучшенной плазмой](https://s.orbis.zone/29m0) от Paffoc\n• Автор: Paffoc\n\n• [Стервятник на дробашах](https://s.orbis.zone/7s3q) от Kawaiski\n• Автор: Kawaiski')
+    emShipsVulture.set_thumbnail(url="attachment://vulture.png")
+    emShipsVulture.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsVulture, delete_after=300)
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Vulture // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Challenger
+@slash.slash(name='challenger', description='Список сборок для «Alliance Challenger»')
+async def challenger(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/alliancechallenger.png', filename='alliancechallenger.png')
+    # Создаём сообщение
+    emShipsVulture = discord.Embed(title='Alliance Challenger', description='Не что иное, как видоизменённая модель Alliance Chieftain с особым упором на ведение открытого боя. Корабль обладает внушительным количеством гнёзд для орудий, что делает его довольно грозным противником. Хоть Challenger и тяжелее своих «родственников», он тоже отличается характерной для Chieftain маневренностью. При этом корабль оборудован более прочной бронёй, нежели Chieftain, и потому способен дольше продержаться против превосходящих сил противника.', colour=0x2F3136)
+    emShipsVulture.add_field(name='CMDR GIF Community', value='• [PVE с рельсами](https://s.orbis.zone/cdxr)\n• Автор: <@232550259841171466>')
+    emShipsVulture.add_field(name='Dark Enterprise', value='• [PVE challenger](https://s.orbis.zone/3jrw)\n• Автор: <@270156067055468544>\n\n• [Challenger с призмой и улуч. плазмой](https://s.orbis.zone/1sld)\n• Автор: <@235835602317082625>')
+    emShipsVulture.set_thumbnail(url="attachment://alliancechallenger.png")
+    emShipsVulture.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsVulture, delete_after=300)
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Challenger // КОНЕЦ
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Chieftain
+@slash.slash(name='chieftain', description='Список сборок для «Alliance Chieftain»')
+async def chieftain(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/alliancechieftain.png', filename='alliancechieftain.png')
+    # Создаём сообщение
+    emShipsChieftain = discord.Embed(title='Alliance Chieftain', description='Alliance Chieftain не только представляет угрозу в бою, но и способен избегать огня противника. Lacon Spaceways обеспечили кораблю высокую манёвренность и впечатляющее вооружение, благодаря которому Chieftain может без труда постоять за себя. В трёх внутренних боевых отсеках можно разместить щитонакопитель, а также усилители модулей и корпуса.', colour=0x2F3136)
+    emShipsChieftain.add_field(name='CMDR GIF Community', value='• [AX с щитами](https://s.orbis.zone/cdxx)\n• [AX с щитами и ремонтными дронами](https://s.orbis.zone/cdxy)\n• [PVE с плазмой](https://s.orbis.zone/ce3c)\n• Автор: <@232550259841171466>')
+    emShipsChieftain.add_field(name='Dark Enterprise', value='• [Chieftain на пиратских лордов](https://s.orbis.zone/4clw)\n• [Chieftain исследователь](https://s.orbis.zone/3y2v)\n• [Chieftain с плазмой и рельсами](https://s.orbis.zone/3y2w)\n• [AX Chieftain](https://s.orbis.zone/3y2u)\n• Автор: <@270156067055468544>')
+    emShipsChieftain.set_thumbnail(url="attachment://alliancechieftain.png")
+    emShipsChieftain.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsChieftain, delete_after=300)
+
+
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Chieftain // КОНЕЦ
+
+
 # Генерируемый токен при создание приложения на discordapp.com, необходимый для подключения к серверу. //
 # Прописывается в config.py
 client.run(config.token)
