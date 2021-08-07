@@ -15,10 +15,8 @@ import logging  # Импортируем модуль логирования
 import aiosqlite  # Импортируем модуль работы с базами SQLite
 import discord  # Импортируем основной модуль
 from discord.ext import commands  # Импортируем команды из модуля discord.ext
-# from discord.ext.commands import has_permissions
 from discord_slash import SlashCommand, SlashContext  # Импортируем модуль команд с косой чертой (slash)
-# from discord_slash.utils.manage_commands import create_choice, create_option
-# from sys import stdout  # Импортируем модуль для регистрации событий приложения
+from discord_slash.utils.manage_commands import create_choice, create_option
 
 import config  # Импортируем настройки приложения
 
@@ -27,7 +25,7 @@ import config  # Импортируем настройки приложения
 
 
 # ------------- СОЗДАЁМ ПРИЛОЖЕНИЕ И НАЗЫВАЕМ ЕГО CLIENT
-client = commands.Bot(description=config.client_short_description, command_prefix=commands.when_mentioned_or(config.prefix), case_insensitive=True, help_command=None)
+client = commands.Bot(description=config.client_short_description, command_prefix=None, help_command=None)
 
 
 # ------------- СОЗДАЁМ ОБРАБОТКУ КОМАНДЫ С КОСОЙ ЧЕРТОЙ ЧЕРЕЗ СОЗДАННОЕ ПРИЛОЖЕНИЕ
@@ -38,7 +36,8 @@ slash = SlashCommand(client, sync_commands=True)
 
 
 # ------------- РЕГИСТРИРУЕМ СОБЫТИЯ ПРИЛОЖЕНИЯ
-logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(process)d:%(thread)d: %(module)s:%(lineno)d: %(message)s')
+logging.basicConfig(level=logging.WARNING,
+                    format='%(asctime)s - %(levelname)s - %(process)d:%(thread)d: %(module)s:%(lineno)d: %(message)s')
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -58,7 +57,7 @@ def get_invite_link(bot_id):
 # ------------- ВЫВОДИМ ДАННЫЕ ПРИЛОЖЕНИЯ ПРИ ПОДКЛЮЧЕНИЕ В КОНСОЛЬ
 @client.event
 async def on_ready():
-    client.sql_conn = await aiosqlite.connect('Edok.sqlite')
+    client.sql_conn = await aiosqlite.connect(config.db_file_name)
     await client.sql_conn.execute('create table if not exists black_list (userid integer not null unique, '
                                   'add_timestamp text default current_timestamp, reason text, banner_id integer);')
 
@@ -83,11 +82,20 @@ async def on_ready():
 # ------------- ВЫВОДИМ СООБЩЕНИЯ ПОЛЬЗОВАТЕЛЕЙ В КОНСОЛЬ ПРИЛОЖЕНИЯ
 @client.event
 async def on_message(message):
-    # Дублирует сообщения в консоль приложения
-    print('{0.guild} / #{0.channel} / {0.author}: {0.content}'.format(message))
+    # Игнорируем сообщения, отправленные этим приложением
+    if message.author.id == client.user.id:
+        return
 
-    # Пропускает команды для регистрации
-    await client.process_commands(message)
+    # Console Log // Выводим сообщения пользователей в консоль Python
+    logger.info('Message: {0.guild} / #{0.channel} / {0.author}: {0.content}'.format(message))
+
+    # Игнорируем сообщения в ЛС
+    if isinstance(message.channel, discord.DMChannel):
+        return
+
+    # Игнорируем сообщения, отправленные другими приложениями
+    if message.author.bot:
+        return
 
 
 # ------------- ВЫВОДИМ СООБЩЕНИЯ ПОЛЬЗОВАТЕЛЕЙ В КОНСОЛЬ ПРИЛОЖЕНИЯ // КОНЕЦ
@@ -137,24 +145,19 @@ async def ping(ctx):
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ ИНФОРМАЦИИ О ПРИЛОЖЕНИИ
-
-async def common_information(ctx):
+@slash.slash(name="information", description="Показать информацию о приложение",)
+async def information(ctx):
     # Создаём сообщение
-    emInformation = discord.Embed(title='ИНФОРМАЦИЯ', description='Тут должно быть описание, но его нет.', colour=0x2F3136)
-    emInformation.add_field(name='Разработчики ', value='• <@420130693696323585>\n• <@665018860587450388>')
+    emInformation = discord.Embed(title='ИНФОРМАЦИЯ',
+                                  description=config.client_full_description.format(
+                                      invite_link=get_invite_link(client.user.id)),
+                                  colour=0x2F3136)
+    emInformation.add_field(name='Разработчики', value='• <@420130693696323585>\n• <@665018860587450388>')
+    emInformation.add_field(name='Благодарности', value='• <@478527700710195203>')
+    # emInformation.add_field(name='Список серверов', value="".join(guild.name + '\n' for guild in client.guilds))
     emInformation.set_footer(text=client.user.name)
     # Отправляем сообщение и удаляем его через 60 секунд
     await ctx.send(embed=emInformation, delete_after=60)
-
-@slash.slash(name="information", description="Показать информацию о приложение.",
-             guild_ids=[guild.id for guild in client.guilds])
-async def information(ctx):
-    await common_information(ctx)
-
-@client.command(aliases=['информация', 'инфо', 'авторы'], brief='Показать информацию о приложение.', pass_context=True)
-async def information(ctx):
-    await ctx.message.delete()
-    await common_information(ctx)
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ ИФОРМАЦИИ О ПРИЛОЖЕНИЕ // КОНЕЦ
@@ -524,7 +527,28 @@ async def krait(ctx):
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII // КОНЕЦ
 
 
-# Генерируемый токен при создание приложения на discordapp.com, необходимый для подключения к серверу. //
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom
+@slash.subcommand(
+    base='ships',
+    name='phantom',
+    base_desc='Сборки по кораблям',
+    description='Список сборок для «Krait Phantom»'
+)
+async def phantom(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/kraitphantom.png', filename='kraitphantom.png')
+    # Создаём сообщение
+    emShipsChieftain = discord.Embed(title='Krait Phantom', description='Krait Phantom считается универсальным судном для любого пилота благодаря вместительному грузовому отсеку и довольно-таки внушительному арсеналу гнёзд. Ему хватит огневой мощи, чтобы сдержать натиск более крупных целей, а по своей скорости он может соревноваться с кораблями заметно меньше собственного размера — во всяком случае, при полёте по прямой. Ещё одно достоинство модели — восемь внутренних отделений, которые пилот может обустроить по своим потребностям. Корабль куда быстрее и легче своего собрата, Krait Mk II, хоть и уступает ему по вооружению.', colour=0x2F3136)
+    emShipsChieftain.add_field(name='CMDR GIF Community', value='• [Pathfinder](https://s.orbis.zone/cc4g)\n• Автор: <@232550259841171466>')
+    emShipsChieftain.add_field(name='Dark Enterprise', value='• [Phantom исследователь](https://s.orbis.zone/48_o)\n• [PVE Phantom](https://s.orbis.zone/42yo)\n• [AX Phantom](https://s.orbis.zone/42wx)\n• [PvP Phantom Prisma](https://s.orbis.zone/47tu)\n• [PvP Phantom Bi-We](https://s.orbis.zone/7s98)\n• Автор: <@270156067055468544>\n\n• [Бронированный исследовательский фантом](https://s.orbis.zone/46rl)\n• Автор: Andrew An')
+    emShipsChieftain.set_thumbnail(url='attachment://kraitphantom.png')
+    emShipsChieftain.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsChieftain, delete_after=300)
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom // КОНЕЦ
+
+
+# Генерируемый токен при создание приложения на странице https://discord.com/developers/applications, необходимый для подключения к серверу
 # Прописывается в config.py
 client.run(config.token)
 
