@@ -548,6 +548,27 @@ async def phantom(ctx):
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom // КОНЕЦ
 
 
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom
+@slash.subcommand(
+    base='ships',
+    name='mamba',
+    base_desc='Сборки по кораблям',
+    description='Список сборок для «Mamba»'
+)
+async def mamba(ctx):
+    # Загружаем картинку корабля
+    file = discord.File('sources/images/mamba.png', filename='mamba.png')
+    # Создаём сообщение
+    emShipsMamba = discord.Embed(title='Mamba', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='В основу разработки Mamba был положен прототип гоночного корабля, так и не увидевшего свет, поэтому нет ничего удивительного в том, что эта модель является одной из самых быстрых из находящихся в производстве. При этом одно гнездо четвертого класса и два — третьего обеспечивают ему достойную огневую мощь. В сочетании со скоростью это позволяет пилоту нанести молниеносный удар и исчезнуть до того, как цель откроет ответный огонь. Безусловно, судно во многом напоминает Fer-de-Lance — другой корабль производства Zorgon Peterson, — однако Mamba легко обгонит его при полёте по прямой, пусть и не обладает такой же манёвренностью.', colour=0x2F3136)
+    emShipsMamba.add_field(name='CMDR GIF Community', value='n/a')
+    emShipsMamba.add_field(name='Dark Enterprise', value='• [PVE Mamba](https://s.orbis.zone/6v9z)\n• [PVP JellyFish](https://s.orbis.zone/6v9x)\n• [PvP Multi-Cannon](https://s.orbis.zone/6v9s)\n• Автор: <@270156067055468544>\n\n• [PvP Duel Multi-Cannon](https://s.orbis.zone/7s05) \n• Автор: AndrewAn')
+    emShipsMamba.set_thumbnail(url='attachment://mamba.png')
+    emShipsMamba.set_footer(text=client.user.name + ' // Полный список кораблей /allships')
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(file=file, embed=emShipsMamba, delete_after=300)
+# ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom // КОНЕЦ
+
+
 # Генерируемый токен при создание приложения на странице https://discord.com/developers/applications, необходимый для подключения к серверу
 # Прописывается в config.py
 client.run(config.token)
