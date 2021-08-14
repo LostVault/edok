@@ -159,6 +159,25 @@ async def information(ctx):
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ ИФОРМАЦИИ О ПРИЛОЖЕНИЕ // КОНЕЦ
 
 
+# ------------- КОМАНДА ВЫВОДА СПИСКА СЕРВЕРОВ
+@slash.subcommand(
+    base='servers',
+    name='show',
+    base_desc='Сборки по кораблям',
+    description='Вывести список серверов, к которым подключено приложение'
+)
+async def servers_list(ctx):
+    # Создаём сообщение
+    emServers = discord.Embed(title='СПИСОК СЕРВЕРОВ', description='Список серверов, к которым подключено приложение', colour=0x2F3136)
+    emServers.add_field(name='Список серверов', value="".join(guild.name + f' (ID:{guild.id})\n' for guild in client.guilds))
+    emServers.set_footer(text=' ' + client.user.name + ' ')
+    # Отправляем сообщение и удаляем его через 60 секунд
+    await ctx.send(embed=emServers, delete_after=60)
+
+
+# ------------- КОМАНДА ВЫВОДА СПИСКА СЕРВЕРОВ // КОНЕЦ
+
+
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СПИСКА ВСЕХ КОМАНД ДЛЯ ВЫЗОВА СБОРОК ПО КОРАБЛЯМ
 @slash.subcommand(
     base='ships',
