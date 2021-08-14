@@ -582,13 +582,13 @@ async def mamba(ctx):
     # Загружаем картинку корабля
     # file = discord.File('sources/images/mamba.png', filename='mamba.png')
     # Создаём сообщение
-    emShipsMamba = discord.Embed(title='Type-6 Transporter', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='Type-6 Transporter производства Lakon Spaceways становится для многих независимых пилотов следующим шагом в их карьере после универсального Cobra Mk III. При должной оснастке корабль обладает достаточной вместимостью для успешной торговли стандартными предметами потребления и не подходит только для транспортировки редких предметов на дальние расстояния. Однако боевые возможности Type-6 довольно ограничены, и пилотам, деятельность которых сопряжена с конфликтами, рекомендуется улучшить щиты и корпус данной модели.', colour=0x2F3136)
-    emShipsMamba.add_field(name='CMDR GIF Community', value='n/a')
-    emShipsMamba.add_field(name='Dark Enterprise', value='• [Type 6 для робиго](https://s.orbis.zone/6v8r)\n• [Майнер пейнита](https://s.orbis.zone/6v8p)\n• Автор: <@270156067055468544>')
-    # emShipsMamba.set_thumbnail(url='attachment://mamba.png')
-    emShipsMamba.set_footer(text=client.user.name + ' // Полный список кораблей /ships show')
+    emShipsType6 = discord.Embed(title='Type-6 Transporter', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='Type-6 Transporter производства Lakon Spaceways становится для многих независимых пилотов следующим шагом в их карьере после универсального Cobra Mk III. При должной оснастке корабль обладает достаточной вместимостью для успешной торговли стандартными предметами потребления и не подходит только для транспортировки редких предметов на дальние расстояния. Однако боевые возможности Type-6 довольно ограничены, и пилотам, деятельность которых сопряжена с конфликтами, рекомендуется улучшить щиты и корпус данной модели.', colour=0x2F3136)
+    emShipsType6.add_field(name='CMDR GIF Community', value='n/a')
+    emShipsType6.add_field(name='Dark Enterprise', value='• [Type 6 для робиго](https://s.orbis.zone/6v8r)\n• [Майнер пейнита](https://s.orbis.zone/6v8p)\n• Автор: <@270156067055468544>')
+    # emShipsType6.set_thumbnail(url='attachment://mamba.png')
+    emShipsType6.set_footer(text=client.user.name + ' // Полный список кораблей /ships show')
     # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
-    await ctx.send(embed=emShipsMamba, delete_after=300)
+    await ctx.send(embed=emShipsType6, delete_after=300)
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-6 Transporter // КОНЕЦ
@@ -605,13 +605,13 @@ async def mamba(ctx):
     # Загружаем картинку корабля
     # file = discord.File('sources/images/mamba.png', filename='mamba.png')
     # Создаём сообщение
-    emShipsMamba = discord.Embed(title='Anaconda', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='Гордость верфей Faulcon DeLacy, Anaconda — это универсальный корабль, способный перевозить крупногабаритные грузы и обладающий огневой мощью. Он настолько хорош, что некоторые небольшие флоты используют его в качестве фрегата или лёгкого крейсера. На данную модель также можно установить стыковочный отсек.', colour=0x2F3136)
-    emShipsMamba.add_field(name='CMDR GIF Community', value='n/a')
-    emShipsMamba.add_field(name='Dark Enterprise', value='• [Универсальная Анаконда](https://s.orbis.zone/3oib)\n• [Анаконда для пве (с призмой)](https://s.orbis.zone/3jsn)\n• [Исследовательская когда прыжок 78.62 св.л.](https://s.orbis.zone/46xa)\n• [Майнер алмазов](https://s.orbis.zone/6eta)\n• [Анаконда майнер 3.3](https://s.orbis.zone/4d75)\n• [#DEVYNATION](https://s.orbis.zone/3kmf)\n• [AX Conda](https://s.orbis.zone/396w)\n• Автор: <@270156067055468544>\n\n• [Исследовательская Конда полный фарш](https://s.orbis.zone/1hlo)\n• Автор: <@513702986858364931>\n\n• [Конда с прыжком 80,45](https://s.orbis.zone/2put)\n• Автор: <@300234139750105088>\n\n• [ПВЕ, пучки, многостволки](https://s.orbis.zone/3oif)\n• Автор: <@259786273475002368>\n\n• [На миротворцах с пылесосом](https://s.orbis.zone/4zxc)\n• Автор: <@344735291384528898>\n\n• [Bliz 2KDPS](https://s.orbis.zone/6o54)\n• Автор: <@283578404274700289>')
-    # emShipsMamba.set_thumbnail(url='attachment://mamba.png')
-    emShipsMamba.set_footer(text=client.user.name + ' // Полный список кораблей /ships show')
+    emShipsAnaconda = discord.Embed(title='Anaconda', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='Гордость верфей Faulcon DeLacy, Anaconda — это универсальный корабль, способный перевозить крупногабаритные грузы и обладающий огневой мощью. Он настолько хорош, что некоторые небольшие флоты используют его в качестве фрегата или лёгкого крейсера. На данную модель также можно установить стыковочный отсек.', colour=0x2F3136)
+    emShipsAnaconda.add_field(name='CMDR GIF Community', value='n/a')
+    emShipsAnaconda.add_field(name='Dark Enterprise', value='• [Универсальная Анаконда](https://s.orbis.zone/3oib)\n• [Анаконда для пве (с призмой)](https://s.orbis.zone/3jsn)\n• [Исследовательская когда прыжок 78.62 св.л.](https://s.orbis.zone/46xa)\n• [Майнер алмазов](https://s.orbis.zone/6eta)\n• [Анаконда майнер 3.3](https://s.orbis.zone/4d75)\n• [#DEVYNATION](https://s.orbis.zone/3kmf)\n• [AX Conda](https://s.orbis.zone/396w)\n• Автор: <@270156067055468544>\n\n• [Исследовательская Конда полный фарш](https://s.orbis.zone/1hlo)\n• Автор: <@513702986858364931>\n\n• [Конда с прыжком 80,45](https://s.orbis.zone/2put)\n• Автор: <@300234139750105088>\n\n• [ПВЕ, пучки, многостволки](https://s.orbis.zone/3oif)\n• Автор: <@259786273475002368>\n\n• [На миротворцах с пылесосом](https://s.orbis.zone/4zxc)\n• Автор: <@344735291384528898>\n\n• [Bliz 2KDPS](https://s.orbis.zone/6o54)\n• Автор: <@283578404274700289>')
+    # emShipsAnaconda.set_thumbnail(url='attachment://mamba.png')
+    emShipsAnaconda.set_footer(text=client.user.name + ' // Полный список кораблей /ships show')
     # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
-    await ctx.send(embed=emShipsMamba, delete_after=300)
+    await ctx.send(embed=emShipsAnaconda, delete_after=300)
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Anaconda // КОНЕЦ
@@ -628,21 +628,17 @@ async def mamba(ctx):
     # Загружаем картинку корабля
     # file = discord.File('sources/images/mamba.png', filename='mamba.png')
     # Создаём сообщение
-    emShipsMamba = discord.Embed(title='Federal Corvette', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='Один из самых мощных кораблей на рынке. Мало кто способен составить конкуренцию Federal Corvette с его семью гнёздами в плане огневой мощи, а с учётом размеров это ещё и на удивление манёвренное судно. Несмотря на сравнительно небольшую дальность прыжка, Corvette является пределом мечтаний для множества независимых боевых пилотов, а невероятная мощность делает его одним из самых грозных кораблей галактики. Для Federal Corvette подходят посадочные площадки большого размера.', colour=0x2F3136)
-    emShipsMamba.add_field(name='CMDR GIF Community', value='• [PVE на пулеметах](https://s.orbis.zone/ce3f)\n• [AX с призмами](https://s.orbis.zone/ce3i)\n• Автор: <@232550259841171466>')
-    emShipsMamba.add_field(name='Dark Enterprise', value='• [PVE фит на лазерах](https://s.orbis.zone/84KS)\n• Автор: <@270156067055468544>\n\n• [Корвет на многостволках PVE](https://s.orbis.zone/84L4)\n• Автор: <@270156067055468544>\n\n• [Корвет с плазмой для PVE](https://s.orbis.zone/84L8)\n• Автор: <@270156067055468544>\n\n• [Корвет исследователь](https://s.orbis.zone/3kn-)\n• Автор: Andrew An\n\n• [AX Corvette II](https://s.orbis.zone/1gg5)\n• Автор: Painbeaver\n\n• [Дальнобойные пульсы + щит в резисты PVE](https://s.orbis.zone/3uwy)\n• Автор: <@270156067055468544>\n\n• [PVP Corvette](https://s.orbis.zone/43bn)\n• Автор: <@270156067055468544>')
-    # emShipsMamba.set_thumbnail(url='attachment://mamba.png')
-    emShipsMamba.set_footer(text=client.user.name + ' // Полный список кораблей /ships show')
+    emShipsCorvette = discord.Embed(title='Federal Corvette', url='https://elite-dangerous.fandom.com/ru/wiki/Mamba', description='Один из самых мощных кораблей на рынке. Мало кто способен составить конкуренцию Federal Corvette с его семью гнёздами в плане огневой мощи, а с учётом размеров это ещё и на удивление манёвренное судно. Несмотря на сравнительно небольшую дальность прыжка, Corvette является пределом мечтаний для множества независимых боевых пилотов, а невероятная мощность делает его одним из самых грозных кораблей галактики. Для Federal Corvette подходят посадочные площадки большого размера.', colour=0x2F3136)
+    emShipsCorvette.add_field(name='CMDR GIF Community', value='• [PVE на пулеметах](https://s.orbis.zone/ce3f)\n• [AX с призмами](https://s.orbis.zone/ce3i)\n• Автор: <@232550259841171466>')
+    emShipsCorvette.add_field(name='Dark Enterprise', value='• [PVE фит на лазерах](https://s.orbis.zone/84KS)\n• Автор: <@270156067055468544>\n\n• [Корвет на многостволках PVE](https://s.orbis.zone/84L4)\n• Автор: <@270156067055468544>\n\n• [Корвет с плазмой для PVE](https://s.orbis.zone/84L8)\n• Автор: <@270156067055468544>\n\n• [Корвет исследователь](https://s.orbis.zone/3kn-)\n• Автор: Andrew An\n\n• [AX Corvette II](https://s.orbis.zone/1gg5)\n• Автор: Painbeaver\n\n• [Дальнобойные пульсы + щит в резисты PVE](https://s.orbis.zone/3uwy)\n• Автор: <@270156067055468544>\n\n• [PVP Corvette](https://s.orbis.zone/43bn)\n• Автор: <@270156067055468544>')
+    # emShipsCorvette.set_thumbnail(url='attachment://mamba.png')
+    emShipsCorvette.set_footer(text=client.user.name + ' // Полный список кораблей /ships show')
     # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
-    await ctx.send(embed=emShipsMamba, delete_after=300)
+    await ctx.send(embed=emShipsCorvette, delete_after=300)
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Corvette // КОНЕЦ
 
-
-
-
-/ships corvette
 
 # Генерируемый токен при создание приложения на странице https://discord.com/developers/applications, необходимый для подключения к серверу
 # Прописывается в config.py
