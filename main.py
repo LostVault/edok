@@ -217,10 +217,10 @@ async def ships_show(ctx):
         value="• Adder\n• Cobra MkIII `/ships cobramk3`\n• Cobra MkIV\n• Diamondback Explorer `/ships dbe`\n• Diamondback Scout\n• Dolphin\n• Eagle\n• Hauler\n• Imperial Courier `/ships courier`\n• Imperial Eagle\n• Sidewinder `/ships sidewinder`\n• Viper\n• Viper MkIV\n• Vulture `/ships vulture`")
     emShipsShow.add_field(
         name="Средние",
-        value="• Alliance Challenger `/ships challenger`\n• Alliance Chieftain `/ships chieftain`\n• Alliance Crusader `/ships crusader`\n• Asp Explorer `/ships aspe`\n• Asp Scout\n• Federal Assault Ship `/ships fas`\n• Federal Dropship\n• Federal Gunship\n• Fer-de-Lance `/ships fdl`\n• Keelback\n• Krait MkII `/ships krait`\n• Krait Phantom `/ships phantom`\n• Mamba `/ships mamba`\n• Python `/python`\n• Type-6 Transporter `/ships type6`")
+        value="• Alliance Challenger `/ships challenger`\n• Alliance Chieftain `/ships chieftain`\n• Alliance Crusader `/ships crusader`\n• Asp Explorer `/ships aspe`\n• Asp Scout\n• Federal Assault Ship `/ships fas`\n• Federal Dropship\n• Federal Gunship\n• Fer-de-Lance `/ships fdl`\n• Keelback\n• Krait MkII `/ships krait`\n• Krait Phantom `/ships phantom`\n• Mamba `/ships mamba`\n• Python `/ships python`\n• Type-6 Transporter `/ships type6`")
     emShipsShow.add_field(
         name="Большие",
-        value="• Anaconda `/ships anaconda`\n• Beluga Liner\n• Federal Corvette `/ships corvette`\n• Imperial Clipper\n• Imperial Cutter `/ships cutter`\n• Orca\n• Type-7 Transporter `/type7`\n• Type-9 Heavy `/type9`\n• Type-10 Defender `/type10`",
+        value="• Anaconda `/ships anaconda`\n• Beluga Liner\n• Federal Corvette `/ships corvette`\n• Imperial Clipper\n• Imperial Cutter `/ships cutter`\n• Orca\n• Type-7 Transporter `/ships type7`\n• Type-9 Heavy `/ships type9`\n• Type-10 Defender `/ships type10`",
         inline=False)
     emShipsShow.set_footer(text=client.user.name)
     # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
