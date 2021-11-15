@@ -214,7 +214,7 @@ async def ships_show(ctx):
         colour=0x2F3136)
     emShipsShow.add_field(
         name="Малые",
-        value="• Adder\n• Cobra MkIII `/ships cobramk3`\n• Cobra MkIV\n• Diamondback Explorer `/ships dbe`\n• Diamondback Scout\n• Dolphin\n• Eagle\n• Hauler\n• Imperial Courier `/ships courier`\n• Imperial Eagle\n• Sidewinder `/ships sidewinder`\n• Viper\n• Viper MkIV\n• Vulture `/ships vulture`")
+        value="• Adder\n• Cobra MkIII `/ships cobramk3`\n• Cobra MkIV\n• Diamondback Explorer `/ships dbe`\n• Diamondback Scout\n• Dolphin `/ships dolphin`\n• Eagle\n• Hauler\n• Imperial Courier `/ships courier`\n• Imperial Eagle\n• Sidewinder `/ships sidewinder`\n• Viper\n• Viper MkIV\n• Vulture `/ships vulture`")
     emShipsShow.add_field(
         name="Средние",
         value="• Alliance Challenger `/ships challenger`\n• Alliance Chieftain `/ships chieftain`\n• Alliance Crusader `/ships crusader`\n• Asp Explorer `/ships aspe`\n• Asp Scout\n• Federal Assault Ship `/ships fas`\n• Federal Dropship\n• Federal Gunship\n• Fer-de-Lance `/ships fdl`\n• Keelback\n• Krait MkII `/ships krait`\n• Krait Phantom `/ships phantom`\n• Mamba `/ships mamba`\n• Python `/ships python`\n• Type-6 Transporter `/ships type6`")
