@@ -311,6 +311,35 @@ async def dbe(ctx):
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Dolphin
+@slash.subcommand(
+    base="ships",
+    name="dolphin",
+    base_desc="Сборки по кораблям",
+    description="Список сборок для «Dolphin»",
+)
+async def dolphin(ctx):
+    # Загружаем картинку корабля
+    # file = discord.File('sources/images/diamondbackexplorer.png", filename="dolphin.png')
+    # Создаём сообщение
+    emShipsDolphin = discord.Embed(
+        title="Dolphin",
+        description="Как и у других пассажирских судов Saud Kruger, на борту Dolphin можно установить каюту класса люкс и создать комфортабельные условия для перевозки пассажиров. И несмотря на значительно меньшую стоимость, чем у его собратьев, Beluga Liner и Orca, Dolphin обладает такой же плавностью линий корпуса и изысканностью.",
+        colour=0x2F3136)
+    emShipsDolphin.add_field(
+        name="CMDR GIF Community",
+        value="• [Fake Taxi](https://s.orbis.zone/h45u)\n• Автор: <@232550259841171466>")
+    emShipsDolphin.add_field(
+        name="Dark Enterprise",
+        value="n/a")
+    # emShipsDolphin.set_thumbnail(url='attachment://dolphin.png')
+    emShipsDolphin.set_footer(
+        text=client.user.name + " // Полный список кораблей /ships show")
+    # Отправляем сообщение и удаляем его через 300 секунд (5 минут)
+    await ctx.send(embed=emShipsDolphin, delete_after=300)
+
+    # CMDR GIF Community
+    # Fake Taxi - https://s.orbis.zone/h45u /-----/ https://coriolis.io/outfit/dolphin?code=A0patfFaliddsdf42d2d02--1O320W431E1Ev62i3w.AwRj4yqA.IwBj48CYIZmKQ%3D%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf85wBXWQMkOOY8%2B%2F9f6AJQu5jKr%2F%2F%2F%2FzP9E4PLlwAJfpCoiNzv%2F%2F9FF%2FAzMEhsYGFgUC4QB5rE%2FE8KrrICphJsk0iNKFDlHaDMf5Z%2FhjBF%2FBVvgPJn7gEtYf1nCdfaCCQ4ef79%2F881RZCBQRHEUgKxVEEsNRDrP9u%2FRJhyIQF1BgY9jy%2F%2F%2F0v6yAKlOP6FwU3qAhJsIZ%2F%2B%2F%2Bef8AJo0407%2F%2F9LJHwAWsdJjCKuf5xYXCrwzweuNRckZfMNKAWSF1nxFxgmIE9C9Iv8i0VxpGmHMNB9%2FxmQAACzaiMtpgEAAA%3D%3D.IwegLCoAyQbHICmBDA5gG0SSVchgUA%3D%3D&bn=Fake%20Taxi
+
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Dolphin // КОНЕЦ
 
 
