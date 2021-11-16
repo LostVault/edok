@@ -327,7 +327,7 @@ async def dolphin(ctx):
         colour=0x2F3136)
     emShipsDolphin.add_field(
         name="CMDR GIF Community",
-        value="• [Fake Taxi](https://s.orbis.zone/h45u)\n• Автор: <@232550259841171466>")
+        value="• [Планетарные операции](https://s.orbis.zone/h45u)\n• Автор: <@232550259841171466>")
     emShipsDolphin.add_field(
         name="Dark Enterprise",
         value="n/a")
