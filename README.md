@@ -4,6 +4,8 @@
   <br>
   E.D.O.K.
   <br>
+  ELITE DANGEROUS OUTFITTING KEEPER 
+  <br>
 </h1>
 
 <p align="center">
