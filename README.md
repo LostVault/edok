@@ -1,7 +1,6 @@
 <h1 align="center">
-   <br>
       <img align="center" src="sources/images/EDOK - Logo - Small.png" alt="ᓚᘏᗢ" width="150" height="150">
-   <br>
+   <br></br>
       E.D.O.K.
    <br>
       ELITE DANGEROUS OUTFITTING KEEPER 
@@ -27,3 +26,8 @@
   
 ## Описание
 EDOK - приложение для вывода списка сборок кораблей на сервисе «Coriolis EDCD Edition» созданными разными игроками русскоязычного сообщества игры «Elite Dangerous».
+
+<p align="right">
+  <br>
+  <img src="sources/images/GPLv3_Logo.svg" alt="ᓚᘏᗢ" width="15%" height="15%">
+</p>
