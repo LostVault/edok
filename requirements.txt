@@ -1,3 +1,1 @@
-discord~=1.7.3
-aiosqlite~=0.17.0
-discord-py-slash-command~=2.3.2
+git+https://github.com/Pycord-Development/pycord
