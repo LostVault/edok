@@ -124,6 +124,7 @@ client.add_application_command(ships)
 # endregion ••••••••••••• СОЗДАЁМ ГРУППУ SHIPS ДЛЯ КОМАНД С КОСОЙ ЧЕРТОЙ // КОНЕЦ
 
 
+# endregion ••••••••••••• TODO: Предпологаемое меню
 class menu_ships(discord.ui.View):
     @discord.ui.select(placeholder='Выберите корабль, чтобы показать список сборок', min_values=1, max_values=1, options=[
         #discord.SelectOption(label='Adder', description='Небольшой корабль', emoji='❌'),
@@ -144,6 +145,9 @@ class menu_ships(discord.ui.View):
         await interaction.response.send_message(f'Это меню находится в разработке', ephemeral=True)
 
 
+# endregion
+
+
 # region •••••••••••••••• СОЗДАЁМ ШАБЛОН СООБЩЕНИЯ SHIPS LIST
 embed_ships_list = discord.Embed(
         title="СПИСОК КОМАНД ПО КОРАБЛЯМ",
@@ -151,12 +155,19 @@ embed_ships_list = discord.Embed(
         colour=0x2F3136)
 embed_ships_list.add_field(
         name="Небольшие корабли",
-        value="• Adder\n• Cobra MkIII `/ships cobramk3`\n"
-              "• Cobra MkIV\n• Diamondback Explorer `/ships dbe`\n"
-              "• Diamondback Scout\n• Dolphin `/ships dolphin`\n"
-              "• Eagle\n• Hauler\n• Imperial Courier `/ships courier`\n"
-              "• Imperial Eagle\n• Sidewinder `/ships sidewinder`\n"
-              "• Viper\n• Viper MkIV\n• Vulture `/ships vulture`")
+        value="• Adder `❌`\n"
+              "• Cobra MkIII `/ships cobramk3`\n"
+              "• Cobra MkIV `❌`\n"
+              "• Diamondback Explorer `/ships dbe`\n"
+              "• Diamondback Scout `❌`\n"
+              "• Dolphin `/ships dolphin`\n"
+              "• Eagle `❌`\n"
+              "• Hauler `❌`\n"
+              "• Imperial Courier `/ships courier`\n"
+              "• Imperial Eagle `❌`\n"
+              "• Sidewinder `/ships sidewinder`\n"
+              "• Viper\n• Viper MkIV\n"
+              "• Vulture `/ships vulture`")
 embed_ships_list.add_field(
         name="Средние корабли",
         value="• Alliance Challenger `/ships challenger`\n"
@@ -167,8 +178,8 @@ embed_ships_list.add_field(
               "• Federal Assault Ship `/ships fas`\n"
               "• Federal Dropship `❌`\n"
               "• Federal Gunship `❌`\n"
-              "• Fer-de-Lance `/ships fdl`\
-              n• Keelback `❌`\n"
+              "• Fer-de-Lance `/ships fdl`\n"
+              "• Keelback `❌`\n"
               "• Krait MkII `/ships krait`\n"
               "• Krait Phantom `/ships phantom`\n"
               "• Mamba `/ships mamba`\n"
@@ -177,9 +188,9 @@ embed_ships_list.add_field(
 embed_ships_list.add_field(
         name="Крупные корабли",
         value="• Anaconda `/ships anaconda`\n"
-              "• Beluga Liner\n `❌`"
+              "• Beluga Liner `❌`\n"
               "• Federal Corvette `/ships corvette`\n"
-              "• Imperial Clipper\n `❌`"
+              "• Imperial Clipper `❌`\n"
               "• Imperial Cutter `/ships cutter`\n"
               "• Orca `❌`\n"
               "• Type-7 Transporter `/ships type7`\n"
@@ -220,7 +231,7 @@ async def ships_show(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra Mk III
-@ships.command(default_permission=False, name="cobramk3", description="Список сборок для «Cobra Mk III»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="cobramk3", description="Список сборок для «Cobra Mk III»")
 async def cobramk3(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -265,7 +276,7 @@ async def cobramk3(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Diamondback Explorer
-@ships.command(default_permission=False, name="dbe", description="Список сборок для «Diamondback Explorer»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="dbe", description="Список сборок для «Diamondback Explorer»")
 async def dbe(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -306,7 +317,7 @@ async def dbe(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Dolphin
-@ships.command(default_permission=False, name="dolphin", description="Список сборок для «Dolphin»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="dolphin", description="Список сборок для «Dolphin»")
 async def dolphin(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -336,7 +347,7 @@ async def dolphin(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Courier
-@ships.command(default_permission=False, name="courier", description="Список сборок для «Imperial Courier»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="courier", description="Список сборок для «Imperial Courier»")
 async def courier(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -379,7 +390,7 @@ async def courier(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder
-@ships.command(default_permission=False, name="sidewinder", description="Список сборок для «Sidewinder»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="sidewinder", description="Список сборок для «Sidewinder»")
 async def sidewinder(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -412,7 +423,7 @@ async def sidewinder(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Vulture
-@ships.command(default_permission=False, name="vulture", description="Список сборок для «Vulture»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="vulture", description="Список сборок для «Vulture»")
 async def vulture(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -476,7 +487,7 @@ async def challenger(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Chieftain
-@ships.command(default_permission=False, name="chieftain", description="Список сборок для «Alliance Chieftain»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="chieftain", description="Список сборок для «Alliance Chieftain»")
 async def chieftain(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -506,7 +517,7 @@ async def chieftain(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Crusader
-@ships.command(default_permission=False, name="crusader", description="Список сборок для «Alliance Crusader»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="crusader", description="Список сборок для «Alliance Crusader»")
 async def crusader(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -528,7 +539,7 @@ async def crusader(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Explorer
-@ships.command(default_permission=False, name="aspe", description="Список сборок для «Asp Explorer»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="aspe", description="Список сборок для «Asp Explorer»")
 async def aspe(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -559,7 +570,7 @@ async def aspe(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Assault Ship
-@ships.command(default_permission=False, name="fas", description="Список сборок для «Federal Assault Ship»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="fas", description="Список сборок для «Federal Assault Ship»")
 async def fas(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -601,7 +612,7 @@ async def fas(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Fer-de-Lance
-@ships.command(default_permission=False, name="fdl", description="Список сборок для «Fer-de-Lance»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="fdl", description="Список сборок для «Fer-de-Lance»")
 async def fdl(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -635,7 +646,7 @@ async def fdl(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII
-@ships.command(default_permission=False, name="krait", description="Список сборок для «Krait MkII»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="krait", description="Список сборок для «Krait MkII»")
 async def krait(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -663,7 +674,7 @@ async def krait(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom
-@ships.command(default_permission=False, name="phantom", description="Список сборок для «Krait Phantom»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="phantom", description="Список сборок для «Krait Phantom»")
 async def phantom(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -697,7 +708,7 @@ async def phantom(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Mamba
-@ships.command(default_permission=False, name="mamba", description="Список сборок для «Mamba»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="mamba", description="Список сборок для «Mamba»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -725,7 +736,7 @@ async def mamba(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Python
-@ships.command(default_permission=False, name="python", description="Список сборок для «Python»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="python", description="Список сборок для «Python»")
 async def python(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -752,7 +763,7 @@ async def python(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-6 Transporter
-@ships.command(default_permission=False, name="type6", description="Список сборок для «Type-6 Transporter»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type6", description="Список сборок для «Type-6 Transporter»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -775,7 +786,7 @@ async def mamba(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Anaconda
-@ships.command(default_permission=False, name="anaconda", description="Список сборок для «Anaconda»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="anaconda", description="Список сборок для «Anaconda»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -818,7 +829,7 @@ async def mamba(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Corvette
-@ships.command(default_permission=False, name="corvette", description="Список сборок для «Federal Corvette»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="corvette", description="Список сборок для «Federal Corvette»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -857,7 +868,7 @@ async def mamba(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Cutter
-@ships.command(default_permission=False, name="cutter", description="Список сборок для «Imperial Cutter»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="cutter", description="Список сборок для «Imperial Cutter»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -899,7 +910,7 @@ async def mamba(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-7 Transporter
-@ships.command(default_permission=False, name="type7", description="Список сборок для «Type-7 Transporter»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type7", description="Список сборок для «Type-7 Transporter»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -923,7 +934,7 @@ async def mamba(ctx):
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-9 Heavy
-@ships.command(default_permission=False, name="type9", description="Список сборок для «Type-9 Heavy»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type9", description="Список сборок для «Type-9 Heavy»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
@@ -951,7 +962,7 @@ async def mamba(ctx):
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-10 Defender
-@ships.command(default_permission=False, name="type10", description="Список сборок для «Type-10 Defender»")
+@ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type10", description="Список сборок для «Type-10 Defender»")
 async def mamba(ctx):
     # region • Создаём сообщение
     embed = discord.Embed(
