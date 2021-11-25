@@ -13,9 +13,7 @@
 </p>
 
 <p align="center">
-	<strong>
 		<a href="https://discord.gg/HFqmXPvMxC">Discord сервер разработчиков</a>
-	</strong>
 </p>
 
 <div align="center">
