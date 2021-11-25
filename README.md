@@ -1,20 +1,31 @@
 <h1 align="center">
-  <br>
-  <img align="center" src="sources/images/EDOK - Logo - Small.png" alt="ᓚᘏᗢ" width="150" height="150">
-  <br>
-  E.D.O.K.
-  <br>
-  ELITE DANGEROUS OUTFITTING KEEPER 
-  <br>
+   <br>
+      <img align="center" src="sources/images/EDOK - Logo - Small.png" alt="ᓚᘏᗢ" width="150" height="150">
+   <br>
+      E.D.O.K.
+   <br>
+      ELITE DANGEROUS OUTFITTING KEEPER 
+   <br>
 </h1>
 
 <p align="center">
+   <b>Приложение для вывода списка с ссылками на сборки кораблей с сервиса «Coriolis EDCD Edition»</b>
+</p>
 
-</p>
 <p align="center">
-    Приложение для вывода списка с ссылками на сборки кораблей с сервиса <b>Coriolis EDCD Edition</b>
-    <br/>
-    <br/>
-    <a href="https://discord.gg/HFqmXPvMxC">
-    <img alt="PyPI" src="https://img.shields.io/discord/866758975345393734?color=90ff00&label=Developers&logo=Discord&logoColor=90ff00" alt="Developers"></a>
+	<strong>
+		<a href="https://discord.gg/HFqmXPvMxC">Discord сервер разработчиков</a>
+	</strong>
 </p>
+
+<div align="center">
+   <a href="https://discord.com/oauth2/authorize?client_id=827209985481244683&scope=bot%20applications.commands">
+      <kbd>Подключить приложение к серверу</kbd>
+   </a>
+</div>
+
+> #### ⚠ ВНИМАНИЕ
+   > Это приложение чудовище Франкенштейна. Будьте осторожны если захотите его использовать.
+  
+## Описание
+EDOK - приложение для вывода списка сборок кораблей на сервисе «Coriolis EDCD Edition» созданными разными игроками русскоязычного сообщества игры «Elite Dangerous».
