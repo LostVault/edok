@@ -166,7 +166,8 @@ embed_ships_list.add_field(
               "• Imperial Courier `/ships courier`\n"
               "• Imperial Eagle `❌`\n"
               "• Sidewinder `/ships sidewinder`\n"
-              "• Viper\n• Viper MkIV\n"
+              "• Viper `❌`\n"
+              "• Viper MkIV `❌`\n"
               "• Vulture `/ships vulture`")
 embed_ships_list.add_field(
         name="Средние корабли",
@@ -233,6 +234,7 @@ async def ships_show(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra Mk III
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="cobramk3", description="Список сборок для «Cobra Mk III»")
 async def cobramk3(ctx):
+    file = discord.File("sources\images\corporations\delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Cobra Mk III",
@@ -240,32 +242,24 @@ async def cobramk3(ctx):
         colour=0x2F3136)
     embed.add_field(
         name="СБОРКИ",
-        value="• [Cobra MK III Универсальная](https://s.orbis.zone/7sa9)\n"
+        value="• [Cobra MK III Универсальная](https://s.orbis.zone/7sa9)\n"  # https://coriolis.io/outfit/cobra_mk_iii?code=A2pataFalddasaf427270p0p04043245030101v6002i.Iw1%2FgDJQ.Aw18cQ%3D%3D.H4sIAAAAAAAAA42Rr0sEURSFz87ujDu%2FHGfdWQcFQXfUZjNsEZsWQbBsEcxi2CBYNmgzGEQEwWQwGoyGjf4BRoOI0aAmk67veu7CPow74ePw7jf3ce%2BDGQPw6xL9cyLsOUB8FAFpm6l2HwLFVwmQklm1Zpeobv2IJK%2FLQOOuQvORjcQxDSsdEEnxLVJ%2FJ7LrBMjVbHamaJbNtDUPh%2Bbguno3o%2FnMirimZaVjwo%2BMSHCRAnOa5jUtaFrUJFXTtjonQEV7uu0ZwLuNefGgpz%2BKFJhtK80S7q7P%2Bv6nSL72IdI8exORcBQpMutWutIF33gcVneXasof%2BE%2BhSWKzYc1LNTscLFUUpwHridm09T3Cyfsinm40bJX5Xi9E9jTOdj19iszsDPXaxBKwcjLJU8H%2F7w%2Fx1ksa%2FgEAAA%3D%3D.EweloBhBGA2EAcICmBDA5gG2SGF8hRFA&bn=Cobra%20Universal
               "• Автор: <@461538602715971594>\n\n"
               
               # Автор HarrisonSould
-              "• [Кобра без орудий для путешествий](https://s.orbis.zone/1slr)\n"
+              "• [Кобра без орудий для путешествий](https://s.orbis.zone/1slr)\n"  # https://coriolis.io/outfit/cobra_mk_iii?code=A0pdtdFaldddsdf4----02-33450301v62i.Iw1%2FkA%3D%3D.Aw1%2FkA%3D%3D..EweloBhBGA2MoFMCGBzANokMK5FAoA%3D%3D&bn=Cobra%20PVE
               "• Автор: <@270156067055468544>\n\n"
               
               # Автор Andrew An
-              "• [Кобра исследователь](https://s.orbis.zone/2tf3)\n"
+              "• [Кобра исследователь](https://s.orbis.zone/2tf3)\n"  # https://coriolis.io/outfit/cobra_mk_iii?code=A0p8tdFaldd3sdf4------321P480d2iv6.Iw18gDCQ.Aw1%2FkA%3D%3D.H4sIAAAAAAAAA1WPOw4BURiFj%2Fc7wxiP6Lw7odCIxAYsQCOxBBoUEgqF2gqUSqVCoVBagogFKBSiEP7ff8XcxBRfJjnfPfdckA%2FA2yN4LQWhnROIzMJArCN%2F5jYEFO4OgB3U0uZU4D8EAKP5YE6uDMmdlNT5UGAUnszWVZBQeXrjBvL9lJguymhzZJvfm6xJQsyTJOymmi0Z46vkxzMze6ihj84FAVUYrMaArCrJKRQVSmES3Uu9%2F5L9hbmiNnOU2rppgN9LTCVZ67dsViPSvZuYJnVt04yWgfoiLvsY9vcBK1p89EMBAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=Cobra%20explorer
               "• Автор: Andrew An\n\n"
               
               # Автор Klemyr
-              "• [Быстрая Кобра (Boost 608 m/s)](https://s.orbis.zone/2_xu)\n"
+              "• [Быстрая Кобра (Boost 608 m/s)](https://s.orbis.zone/2_xu)\n"  # https://coriolis.io/outfit/cobra_mk_iii?code=A4pataFaladasaf427270p0p0404322bB3v6m3m32525.Iw1%2FgDJQ.IzAM4yLUXI%3D%3D.H4sIAAAAAAAAA42RO0sDQRSFbx67JNkkmyx5%2BUDUrBaidhaCaCmIiGBhQAvtRBsLiyDaWdiJjYWVgqWFpaWFf8FKC2sfCBKCaDLHc4Vd0SpbHM7O%2FeaemTtibBFpW5TWEcW7fwIyaQPkl%2BMifldCxDmnQ8TMKBlRcp%2FiKlS6YinR4CKiphR22tG6%2FwlUtF7o%2BwKKx65IdbtMMma6Q7KumddOgD9wsbBXJGSZyQAa0qThlZxIUl1K3YC6QXWwzVpAejePgFt%2FAcanmgASphYmxShWrUfEvszwJJoUX2Umkp1AKbMUQJWDBmDt0tobH0D18BkoZ3UEzi%2Fkzbd5nQklX6Mk595Jrr%2BR3OIv0mY2zDzVYS1yRJXbpEj%2Bgg%2FiqzgqyHRMumYsJE8o2SZnnx9tAf40L%2BOoQ84shNCmtjvjs%2FBEJLWx%2F%2FNABTPyp5NzR5vt7yWkztM9vjoUOyYh%2F75vsJ9Vm3oCAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=Valor%20(Fast%20PVE)
               "• Автор: <@189334900405436416>")
+    embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
-
-
-    """
-    Dark Enterprise
-    Cobra MK III Универсальная - https://s.orbis.zone/7sa9 /----/ https://coriolis.io/outfit/cobra_mk_iii?code=A2pataFalddasaf427270p0p04043245030101v6002i.Iw1%2FgDJQ.Aw18cQ%3D%3D.H4sIAAAAAAAAA42Rr0sEURSFz87ujDu%2FHGfdWQcFQXfUZjNsEZsWQbBsEcxi2CBYNmgzGEQEwWQwGoyGjf4BRoOI0aAmk67veu7CPow74ePw7jf3ce%2BDGQPw6xL9cyLsOUB8FAFpm6l2HwLFVwmQklm1Zpeobv2IJK%2FLQOOuQvORjcQxDSsdEEnxLVJ%2FJ7LrBMjVbHamaJbNtDUPh%2Bbguno3o%2FnMirimZaVjwo%2BMSHCRAnOa5jUtaFrUJFXTtjonQEV7uu0ZwLuNefGgpz%2BKFJhtK80S7q7P%2Bv6nSL72IdI8exORcBQpMutWutIF33gcVneXasof%2BE%2BhSWKzYc1LNTscLFUUpwHridm09T3Cyfsinm40bJX5Xi9E9jTOdj19iszsDPXaxBKwcjLJU8H%2F7w%2Fx1ksa%2FgEAAA%3D%3D.EweloBhBGA2EAcICmBDA5gG2SGF8hRFA&bn=Cobra%20Universal
-    Кобра без орудий для путешествий - https://s.orbis.zone/1slr /----/ https://coriolis.io/outfit/cobra_mk_iii?code=A0pdtdFaldddsdf4----02-33450301v62i.Iw1%2FkA%3D%3D.Aw1%2FkA%3D%3D..EweloBhBGA2MoFMCGBzANokMK5FAoA%3D%3D&bn=Cobra%20PVE
-    Кобра исследователь - https://s.orbis.zone/2tf3 /----/ https://coriolis.io/outfit/cobra_mk_iii?code=A0p8tdFaldd3sdf4------321P480d2iv6.Iw18gDCQ.Aw1%2FkA%3D%3D.H4sIAAAAAAAAA1WPOw4BURiFj%2Fc7wxiP6Lw7odCIxAYsQCOxBBoUEgqF2gqUSqVCoVBagogFKBSiEP7ff8XcxBRfJjnfPfdckA%2FA2yN4LQWhnROIzMJArCN%2F5jYEFO4OgB3U0uZU4D8EAKP5YE6uDMmdlNT5UGAUnszWVZBQeXrjBvL9lJguymhzZJvfm6xJQsyTJOymmi0Z46vkxzMze6ihj84FAVUYrMaArCrJKRQVSmES3Uu9%2F5L9hbmiNnOU2rppgN9LTCVZ67dsViPSvZuYJnVt04yWgfoiLvsY9vcBK1p89EMBAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=Cobra%20explorer
-    Быстрая Кобра (Boost 608 m/s) - https://s.orbis.zone/2_xu /-----/ https://coriolis.io/outfit/cobra_mk_iii?code=A4pataFaladasaf427270p0p0404322bB3v6m3m32525.Iw1%2FgDJQ.IzAM4yLUXI%3D%3D.H4sIAAAAAAAAA42RO0sDQRSFbx67JNkkmyx5%2BUDUrBaidhaCaCmIiGBhQAvtRBsLiyDaWdiJjYWVgqWFpaWFf8FKC2sfCBKCaDLHc4Vd0SpbHM7O%2FeaemTtibBFpW5TWEcW7fwIyaQPkl%2BMifldCxDmnQ8TMKBlRcp%2FiKlS6YinR4CKiphR22tG6%2FwlUtF7o%2BwKKx65IdbtMMma6Q7KumddOgD9wsbBXJGSZyQAa0qThlZxIUl1K3YC6QXWwzVpAejePgFt%2FAcanmgASphYmxShWrUfEvszwJJoUX2Umkp1AKbMUQJWDBmDt0tobH0D18BkoZ3UEzi%2Fkzbd5nQklX6Mk595Jrr%2BR3OIv0mY2zDzVYS1yRJXbpEj%2Bgg%2FiqzgqyHRMumYsJE8o2SZnnx9tAf40L%2BOoQ84shNCmtjvjs%2FBEJLWx%2F%2FNABTPyp5NzR5vt7yWkztM9vjoUOyYh%2F75vsJ9Vm3oCAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=Valor%20(Fast%20PVE)
-    """
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra Mk III // КОНЕЦ
@@ -278,6 +272,7 @@ async def cobramk3(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Diamondback Explorer
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="dbe", description="Список сборок для «Diamondback Explorer»")
 async def dbe(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Diamondback Explorer",
@@ -285,28 +280,19 @@ async def dbe(ctx):
         colour=0x2F3136)
     embed.add_field(
         name="СБОРКИ",
-        value="• [DBE за 77](https://s.orbis.zone/czgy)\n"
+        value="• [DBE за 77](https://s.orbis.zone/czgy)\n"  # https://coriolis.io/outfit/diamondback_explorer?code=A0p0tdFfldd3sdf4-------321P0i43v61y9q2i.Iw18SQ%3D%3D.Aw18SQ%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf8Zw9XWQ8kOI5wMjDw23z7%2F19sAT9QnumfGFy%2BDEjwq%2Fz6%2F19E7vf%2F%2F6IgeYkNLAwMygXiQJXM%2F6TgKitgKsE2iURIA1XeAcr8Z%2FlnCFPEX%2FEGKH%2Fm3v%2F%2F%2F1n%2FWcG1tgAJTpCBXAaCDAyKIEOUQIQqiFDj%2BQdUzvYvAdWQAw%2F%2B%2F9cDufm%2F0D8fuEmFDFCfCIEUiaz4C3QzyBESCR%2BAKsX%2BxcJUCgmoMzCYdggD3fefAQYATsmgtEMBAAA%3D.EwegLCAMUgjAbCUBTAhgcwDbJHS%2BZpIg
               "• Автор: <@184299323624783872>\n\n"
               
               # Автор Klemyr
-              "• [DBE Explorer](https://s.orbis.zone/qov)\n"
+              "• [DBE Explorer](https://s.orbis.zone/qov)\n"  # https://coriolis.io/outfit/diamondback_explorer?code=A0p0tdFfldd3sdf4-------1P3243v62i2f.Iw1%2FADGQ.Aw18UA%3D%3D.H4sIAAAAAAAAAz2OvQ7BYBSGT6sVf0m1isYi%2FjdhFQmjwT1wCSzSgXtwGUaDwehCDGI2GBqD6DnOm6hvePPlPM%2BbcwyeEFFsaHx2GplIv06BRSpHi0hMDsBN8I2Gs1LkI8q%2BTRTsVW%2FNIhFJcQ2mDTOE2X6LeOc8kb8tq3lVIhYPIVngy6fy012rNo%2BSanZVJcoNXKIG%2Bk1EB9HFTZLmZWI64UP7l5tIf%2FxS5PL8v38NjqkHyT%2FEei72B9gpJV4kplfsEQ2ndT1N6Pe%2Br5CN6xMBAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=DBE%20Explorer
               "• Автор: <@189334900405436416>\n\n"
               
-              "• [DBE Explorer 71.80 прыжок](https://s.orbis.zone/2wux)\n"
+              "• [DBE Explorer 71.80 прыжок](https://s.orbis.zone/2wux)\n"  # https://coriolis.io/outfit/diamondback_explorer?code=A0p0tdFfldd3sdf4---02---1P32430i0Vv69q2i.Iw1%2BgDC1A%3D%3D%3D.Aw18SQ%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf8ZwdXWQ8kOAJ%2B%2F%2F%2FP%2F0CPgUFsAwtQ5QWgQf%2BZ%2FonBFZUBCX6VX%2F%2F%2Fi7wBEqIL%2BBkYJEAqlQvEgSqZ%2F0nBVVbAVIKtE6kRBaq8A5T5z%2FLPEKSIBSSf8AEov%2BXR%2F%2F%2F%2FWf9ZwbU2AAlOkIFcBoIMDIogQ5RAhCqIUOP5B1TO9i8Bppy%2F4g3QkAMP%2Fv%2FXs%2FkGlOL%2Bp4YqdeYeUFTwnw%2Fc%2FByQFEitEEheZMVfoE9ATpMAOee%2F2L9YmEohAXUGBtMOYaCr%2FzPAAQDt0L78XwEAAA%3D%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=DBE%20Jumpy
               "• Автор: <@269516916631142411>")
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
-
-
-    """
-    CMDR GIF Community
-    DBE за 77 - https://s.orbis.zone/czgy /-----/ https://coriolis.io/outfit/diamondback_explorer?code=A0p0tdFfldd3sdf4-------321P0i43v61y9q2i.Iw18SQ%3D%3D.Aw18SQ%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf8Zw9XWQ8kOI5wMjDw23z7%2F19sAT9QnumfGFy%2BDEjwq%2Fz6%2F19E7vf%2F%2F6IgeYkNLAwMygXiQJXM%2F6TgKitgKsE2iURIA1XeAcr8Z%2FlnCFPEX%2FEGKH%2Fm3v%2F%2F%2F1n%2FWcG1tgAJTpCBXAaCDAyKIEOUQIQqiFDj%2BQdUzvYvAdWQAw%2F%2B%2F9cDufm%2F0D8fuEmFDFCfCIEUiaz4C3QzyBESCR%2BAKsX%2BxcJUCgmoMzCYdggD3fefAQYATsmgtEMBAAA%3D.EwegLCAMUgjAbCUBTAhgcwDbJHS%2BZpIg
-
-    Dark Enterprise
-    DBE Explorer - https://s.orbis.zone/qov /-----/ https://coriolis.io/outfit/diamondback_explorer?code=A0p0tdFfldd3sdf4-------1P3243v62i2f.Iw1%2FADGQ.Aw18UA%3D%3D.H4sIAAAAAAAAAz2OvQ7BYBSGT6sVf0m1isYi%2FjdhFQmjwT1wCSzSgXtwGUaDwehCDGI2GBqD6DnOm6hvePPlPM%2BbcwyeEFFsaHx2GplIv06BRSpHi0hMDsBN8I2Gs1LkI8q%2BTRTsVW%2FNIhFJcQ2mDTOE2X6LeOc8kb8tq3lVIhYPIVngy6fy012rNo%2BSanZVJcoNXKIG%2Bk1EB9HFTZLmZWI64UP7l5tIf%2FxS5PL8v38NjqkHyT%2FEei72B9gpJV4kplfsEQ2ndT1N6Pe%2Br5CN6xMBAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=DBE%20Explorer
-    DBE Explorer 71.80 прыжок - https://s.orbis.zone/2wux /-----/ https://coriolis.io/outfit/diamondback_explorer?code=A0p0tdFfldd3sdf4---02---1P32430i0Vv69q2i.Iw1%2BgDC1A%3D%3D%3D.Aw18SQ%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf8ZwdXWQ8kOAJ%2B%2F%2F%2FP%2F0CPgUFsAwtQ5QWgQf%2BZ%2FonBFZUBCX6VX%2F%2F%2Fi7wBEqIL%2BBkYJEAqlQvEgSqZ%2F0nBVVbAVIKtE6kRBaq8A5T5z%2FLPEKSIBSSf8AEov%2BXR%2F%2F%2F%2FWf9ZwbU2AAlOkIFcBoIMDIogQ5RAhCqIUOP5B1TO9i8Bppy%2F4g3QkAMP%2Fv%2FXs%2FkGlOL%2Bp4YqdeYeUFTwnw%2Fc%2FByQFEitEEheZMVfoE9ATpMAOee%2F2L9YmEohAXUGBtMOYaCr%2FzPAAQDt0L78XwEAAA%3D%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=DBE%20Jumpy
-    """
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Diamondback Explorer // КОНЕЦ
@@ -319,6 +305,7 @@ async def dbe(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Dolphin
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="dolphin", description="Список сборок для «Dolphin»")
 async def dolphin(ctx):
+    file = discord.File("sources\images\corporations\saud-kruger-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Dolphin",
@@ -326,17 +313,12 @@ async def dolphin(ctx):
         colour=0x2F3136)
     embed.add_field(
         name="СБОРКИ",
-        value="• [Планетарные операции](https://s.orbis.zone/h4ns)\n"
+        value="• [Планетарные операции](https://s.orbis.zone/h4ns)\n"  # https://coriolis.io/outfit/dolphin?code=A0patfFaliddsdf42d2d02--1O320W431E1Ev62i3w.AwRj4yqA.IwBj48CYIZmKQ%3D%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf85wBXWQMkOOY8%2B%2F9f6AJQu5jKr%2F%2F%2F%2FzP9E4PLlwAJfpCoiNzv%2F%2F9FF%2FAzMEhsYGFgUC4QB5rE%2FE8KrrICphJsk0iNKFDlHaDMf5Z%2FhjBF%2FBVvgPJn7gEtYf1nBdfaCCQ4QQZyGQgyMCiCDFECEaogQo3nH1A5279EmHIhAXUGBj2PL%2F%2F%2FS%2FrIAs3n%2BBcGN6kLSLCFfPr%2Fn3%2FCC6BNN%2B78%2Fy%2BR8AGon5MYRVz%2FOLG4VOCfD1xrLkjK5htQCiQvsuIvMExAnoToF%2FkXi%2BJI0w5hoPv%2BMyABAJBkKYOmAQAA.IwegLCoAyQbHICmBDA5gG0SSVchgUA%3D%3D&bn=Fake%20Taxi
               "• Автор: <@232550259841171466>")
+    embed.set_image(url='attachment://saud-kruger-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
-
-
-    """
-    CMDR GIF Community
-    Планетарные операции - https://s.orbis.zone/h45u /-----/ https://coriolis.io/outfit/dolphin?code=A0patfFaliddsdf42d2d02--1O320W431E1Ev62i3w.AwRj4yqA.IwBj48CYIZmKQ%3D%3D%3D.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf85wBXWQMkOOY8%2B%2F9f6AJQu5jKr%2F%2F%2F%2FzP9E4PLlwAJfpCoiNzv%2F%2F9FF%2FAzMEhsYGFgUC4QB5rE%2FE8KrrICphJsk0iNKFDlHaDMf5Z%2FhjBF%2FBVvgPJn7gEtYf1nCdfaCCQ4ef79%2F881RZCBQRHEUgKxVEEsNRDrP9u%2FRJhyIQF1BgY9jy%2F%2F%2F0v6yAKlOP6FwU3qAhJsIZ%2F%2B%2F%2Bef8AJo0407%2F%2F9LJHwAWsdJjCKuf5xYXCrwzweuNRckZfMNKAWSF1nxFxgmIE9C9Iv8i0VxpGmHMNB9%2FxmQAACzaiMtpgEAAA%3D%3D.IwegLCoAyQbHICmBDA5gG0SSVchgUA%3D%3D&bn=Fake%20Taxi
-    """
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Dolphin // КОНЕЦ
@@ -349,6 +331,7 @@ async def dolphin(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Courier
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="courier", description="Список сборок для «Imperial Courier»")
 async def courier(ctx):
+    file = discord.File("sources\images\corporations\gutamaya-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Imperial Courier",
@@ -377,9 +360,10 @@ async def courier(ctx):
               # Автор Tmtgrs
               "• [Торпедный курьер](https://s.orbis.zone/80tV)\n"
               "• Автор: <@514930529183989842>")
+    embed.set_image(url='attachment://gutamaya-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Courier// КОНЕЦ
@@ -392,6 +376,7 @@ async def courier(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="sidewinder", description="Список сборок для «Sidewinder»")
 async def sidewinder(ctx):
+    file = discord.File("sources\images\corporations\delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Sidewinder",
@@ -399,16 +384,11 @@ async def sidewinder(ctx):
         colour=0x2F3136)
     embed.add_field(
         name="СБОРКИ",
-        value="• [DarkWinder](https://s.orbis.zone/4uji)\n• Автор: n/a")
+        value="• [DarkWinder](https://s.orbis.zone/4uji)\n• Автор: n/a")  # https://coriolis.io/outfit/sidewinder?code=A2p0u0F0l3d0s3f12j2j0200272725m1m166.Iw1%2FADJQ.Aw1%2BkA%3D%3D.H4sIAAAAAAAAA42QsU4CURREB3fRhV3AXQGJwURlgcTCxNLEgp%2Bw5xMoLCywoaImxMrCT7C09AM0saEjxspQUJNo9F7vkPgSjAWvmEzunDd570ICAN9Zk6%2BRSdj7UI27n6rpXQnQjHRcfm0S3L6rJi9bQDU1SDek6vJLkxKn5blJhfdr9z7Q6O1akyd7v%2BQSSh5CoNyvGDS1ofpy6vKrueVPr9aflTPXPzDJRaKaH8fAId0RXZOuRaeb0l0teXxTPTlfWFMgF66pYILtNuBTEr6vxj%2Ftzzwrya1N5qVJ0iM03LGcUJ1OQ4n%2BiZa3Ijl2%2FTfc%2BbPZ4kEdiOkSLi6l08LaZPEvOXHkxJF0qlg5P%2BCdwyMBAgAA.EweloBjEoUwQwOYBtYhARgtmuJA%3D&bn=DarkWinder
+    embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
-
-
-    """
-    Dark Enterprise
-    DarkWinder - https://s.orbis.zone/4uji /-----/ https://coriolis.io/outfit/sidewinder?code=A2p0u0F0l3d0s3f12j2j0200272725m1m166.Iw1%2FADJQ.Aw1%2BkA%3D%3D.H4sIAAAAAAAAA42QsU4CURREB3fRhV3AXQGJwURlgcTCxNLEgp%2Bw5xMoLCywoaImxMrCT7C09AM0saEjxspQUJNo9F7vkPgSjAWvmEzunDd570ICAN9Zk6%2BRSdj7UI27n6rpXQnQjHRcfm0S3L6rJi9bQDU1SDek6vJLkxKn5blJhfdr9z7Q6O1akyd7v%2BQSSh5CoNyvGDS1ofpy6vKrueVPr9aflTPXPzDJRaKaH8fAId0RXZOuRaeb0l0teXxTPTlfWFMgF66pYILtNuBTEr6vxj%2Ftzzwrya1N5qVJ0iM03LGcUJ1OQ4n%2BiZa3Ijl2%2FTfc%2BbPZ4kEdiOkSLi6l08LaZPEvOXHkxJF0qlg5P%2BCdwyMBAgAA.EweloBjEoUwQwOYBtYhARgtmuJA%3D&bn=DarkWinder
-    """
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder // КОНЕЦ
@@ -461,6 +441,7 @@ async def vulture(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Challenger
 @ships.command(default_permission=False, name="challenger", description="Список сборок для «Alliance Challenger»")
 async def challenger(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Alliance Challenger",
@@ -478,9 +459,10 @@ async def challenger(ctx):
               
               "• [Challenger с призмой и улуч. плазмой](https://s.orbis.zone/1sld)\n"
               "• Автор: <@235835602317082625>")
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Challenger // КОНЕЦ
@@ -541,6 +523,7 @@ async def crusader(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Explorer
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="aspe", description="Список сборок для «Asp Explorer»")
 async def aspe(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Asp Explorer",
@@ -557,9 +540,10 @@ async def aspe(ctx):
               "• [ASP Майнер 3.3](https://s.orbis.zone/3oia)\n"
               "• [ASP Майнер пейнита](https://s.orbis.zone/3utw)\n"
               "• Автор: <@270156067055468544>")
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Explorer // КОНЕЦ
@@ -572,6 +556,7 @@ async def aspe(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Assault Ship
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="fas", description="Список сборок для «Federal Assault Ship»")
 async def fas(ctx):
+    file = discord.File("sources\images\corporations\core-dynamics-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Federal Assault Ship",
@@ -595,9 +580,10 @@ async def fas(ctx):
               "• [PVE с рельсами](https://s.orbis.zone/cdxu)\n"
               "• [AX с щитами и дронами](https://s.orbis.zone/cdye)\n"
               "• Автор: <@232550259841171466>")
+    embed.set_image(url='attachment://core-dynamics-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Assault Ship // КОНЕЦ
@@ -614,9 +600,10 @@ async def fas(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Fer-de-Lance
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="fdl", description="Список сборок для «Fer-de-Lance»")
 async def fdl(ctx):
+    file = discord.File("sources\images\corporations\delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
-        title="Federal Assault Ship",
+        title="Fer-de-Lance",
         description="```Fer-de-Lance — это тяжёлый боевой корабль производства Zorgon Peterson. За четыре средних и одно гигантское гнездо на борту корабль можно смело назвать серьезным противником, справиться с которым будет нелегко даже Anaconda и Federal Corvette. Если у него и есть недостатков, то это его узкая специализация. Покупателям не рекомендуется использовать Fer-de-Lance для какой-то другой деятельности, кроме боя.```",
         colour=0x2F3136)
     embed.add_field(
@@ -633,9 +620,10 @@ async def fdl(ctx):
               "• [AX FDL](https://s.orbis.zone/20u8)\n• Автор: Equalizer\n\n"
               "• [AX FDL v2](https://s.orbis.zone/5x7m)\n"
               "• Автор:  <@305091226611351572>")
+    embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Fer-de-Lance // КОНЕЦ
@@ -648,6 +636,7 @@ async def fdl(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="krait", description="Список сборок для «Krait MkII»")
 async def krait(ctx):
+    file = discord.File("sources\images\corporations\delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Krait MkII",
@@ -665,9 +654,10 @@ async def krait(ctx):
               "• [Майнер пейнита](https://s.orbis.zone/3uxs)\n"
               "• [PvP Krait v2](https://s.orbis.zone/4c1d)\n"
               "• Автор: <@270156067055468544>")
+    embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII // КОНЕЦ
@@ -676,6 +666,7 @@ async def krait(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="phantom", description="Список сборок для «Krait Phantom»")
 async def phantom(ctx):
+    file = discord.File("sources\images\corporations\delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Krait Phantom",
@@ -699,9 +690,10 @@ async def phantom(ctx):
               # Автор Andrew An
               "• [Бронированный исследовательский фантом](https://s.orbis.zone/46rl)\n"  # https://coriolis.io/outfit/krait_phantom?code=A00BtiFflid8ssf4------08083c0s1O0sv62ip4273x.Iw18gDM1kA%3D%3D.AwRmwFnadmqA.H4sIAAAAAAAAA2P4x87AwPCXFUj8mQQkuPcwMTDwNvAwMAhGAFlCO7gZGFS%2BMDIw%2FGf6JwZXWQYk%2BFV%2B%2Ff8v8gZIiC7gZ2CQ2MDCwKBcIA5UyfxPCq6ynAFqCFi5xB2goMgvEaAiln%2BGMEX8FW%2F%2B%2Fxc6c%2B%2F%2F%2F%2F%2Bs%2F6zgWluAhCpIlxrPv%2F%2F%2FOQ8AdXG5AG1SBIkpgYj%2FbP8SUA058OD%2Ffz2bb0Apvn%2BucJPmgORBVgsZlAJdeoSTgUH%2BBh%2FQEfzEKBL9FwtTJCSgzsBg2iEMFBX75wPXWgjSCrJVCOQIkRV%2FgWECMkki4QPQJeL%2FNOEqpwEJPoMfQJULQI78z4AAAKcyXI2KAQAA.EwegLCAMUgjAbDApgQwOYBskjpPNpIg%3D&bn=%D1%83%D1%81%D0%B8%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20phantom%20%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20(%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%B9)
               "• Автор: Andrew An")
+    embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom // КОНЕЦ
@@ -710,26 +702,28 @@ async def phantom(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Mamba
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="mamba", description="Список сборок для «Mamba»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\zorgon-peterson-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
-        title="Mamba",
-        url="https://elite-dangerous.fandom.com/ru/wiki/Mamba",
-        description="В основу разработки Mamba был положен прототип гоночного корабля, так и не увидевшего свет, поэтому нет ничего удивительного в том, что эта модель является одной из самых быстрых из находящихся в производстве. При этом одно гнездо четвертого класса и два — третьего обеспечивают ему достойную огневую мощь. В сочетании со скоростью это позволяет пилоту нанести молниеносный удар и исчезнуть до того, как цель откроет ответный огонь. Безусловно, судно во многом напоминает Fer-de-Lance — другой корабль производства Zorgon Peterson, — однако Mamba легко обгонит его при полёте по прямой, пусть и не обладает такой же манёвренностью.",
+        title='Mamba',
+        url='https://elite-dangerous.fandom.com/ru/wiki/Mamba',
+        description='```В основу разработки Mamba был положен прототип гоночного корабля, так и не увидевшего свет, поэтому нет ничего удивительного в том, что эта модель является одной из самых быстрых из находящихся в производстве. При этом одно гнездо четвертого класса и два — третьего обеспечивают ему достойную огневую мощь. В сочетании со скоростью это позволяет пилоту нанести молниеносный удар и исчезнуть до того, как цель откроет ответный огонь. Безусловно, судно во многом напоминает Fer-de-Lance — другой корабль производства Zorgon Peterson, — однако Mamba легко обгонит его при полёте по прямой, пусть и не обладает такой же манёвренностью.```',
         colour=0x2F3136)
     embed.add_field(
-        name="СБОРКИ",
+        name='СБОРКИ',
         value=# Автор HarrisonSould
-              "• [PVE Mamba](https://s.orbis.zone/6v9z)\n"  # https://coriolis.io/outfit/mamba?code=A2pftfFalidpsif37o7l7l0p0p040404040400B21J6g2o273w.Iw18aAMQ.Aw18WQ%3D%3D.H4sIAAAAAAAAA42Suy8EURTGz%2B7OjJ2d187sMwjBIBpZpUolOlFOuZ1CoyBRkNCpRWSLLbZQKhQKhdIfoFSoREShUIgIu%2Bc4Z2KuRzxmii%2Ff5PzOd899APYBQE9n6e6xWGdZAGfbBvAjdsGpBRA%2BZgAog3NCakJuseQvuNNrPBNVbxinLFZV0hqLF74Qle9ZKh0PoH7MnWOrNSZz2K%2FIjYSMVypvVpi84gppOJMs5zUfuH5yTUQ6zqrWHRbTRqLCvg8wIm5U3Li4CXFkYPNrSPuWaFpmpjxGKinHoskQejQAYBw5PGk8hPkJsn%2BDCmkgC5cVNMTyvW7%2FU3dwIalbhwZvZ%2BmVyBdXPzf5isSRi%2FMqpC17ltagsf4ODV%2B6DHlpoGIayP%2BYqdv6c7AA5WB6cs6wW%2BKk4iTA4B3%2FUwkXVciKrCSPxZeQMH4sNZxS9QMWV24v6DzxFRL88L0B9j%2FH3NECAAA%3D.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=PVE%20MAMBA
-              "• [PVP JellyFish](https://s.orbis.zone/6v9x)\n"  # https://coriolis.io/outfit/mamba?code=A0pktfFalidpsif31u1u1u2921040404040404p21E1E276b3w.Iw18WQ%3D%3D.EwRgDBld3mQ%3D.H4sIAAAAAAAAA4WSMUsDQRCFxyR3ueSSnHcmMSoq6hlIIwnYCIKFiDbWprSwESxSKAhiIVhaigpa%2BAMstLO0CNgISRkhiIWVWItonHHm5BYTFrziMbfzvbe7wwKaAPBtsNizFkA6hUSuFQfwDl%2BJ%2FDZ3qA8XBIqxdPZZrCb3nfIHUf4lxf0I5sOQzjaL438SFa6Zz459EeX2HYCp2iCTURxW5B6Ld2uHuOyU3cwxyetAMayEpLP7RuQ9PBGRgXPKf8AyLcctHrsACamSUk1INSkVmbjeHXL3TDQz%2F85JFlZVEt8BjOURAPMqzfvLSUYrHYYSvVBJAyV7oUUNZOOagjbCiwd3NmSOQ%2FdFPm7qT1JUkqpdSZTGJdW%2FkJDyDl%2Bsyf%2BFegJgvJ4BcGV6vogdzDGj9bSVp6HxOD2eAA%2BMv54We6j%2Fn%2BCWJtjVehrKc67xeLiiPKeyWpMXKuIfJbk%2FgKuqv8WSO%2BOQSIGHbsoLdB95kv5NXN43V5THksJPWDIyfu9SngSB5vsBTrLR7iEDAAA%3D.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=JellyFish
-              "• [PvP Multi-Cannon](https://s.orbis.zone/6v9s)\n"  # https://coriolis.io/outfit/mamba?code=A0pftfFdlidpsif37o7l7l2424040404040404p21E1E276b3w.AwRj4yvI.EwRgDBld3mQ%3D.H4sIAAAAAAAAA42SP0sDQRDFJ3%2FN5S4578zFoKCop2AjEWwEwUqwsU%2FpB7BIoZAihfZWImphkQ9goZ2FhUVKQUuFIH4ASxHROOObkyxREriFfczxfm9vllniESL6zkC6RxD7JklU2HeIvBoq%2F9omCt8SRJLgdUM2Ibm2ReSuvYuUWy78JJeNvwtxw0%2BR0tSXSKB%2B5TJNNFcfB5niCUM2emT0p1IzANmBI2le7kFu4xX%2B3bOIZHjVRA8g8w6LLBx7RJZWea1mtJrVSrK8%2FfeQ2xeRJe1ZclwzJ2FTWpvI1CaJshcFdBo1YfVBzjAoHwey40BOH5QbBhV4w0DnEL%2B6h9s94LuiE5luFzE7vVGoYqtIcWCmYzL3AzLuv0yER8HfzCMyMhoH8uJAPm8a6FSbqGOKnkp4mIc%2FxlvG34EEZ0glK12RrL4s7ymF7q%2FwmO0VVFLmRYOfQIrVD4y%2FpZMXGrB%2BAOTWbW8IAwAA.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=PvP%20Multi%20SF
-              "• Автор: <@270156067055468544>\n\n"
+              '• [PVE Mamba](https://s.orbis.zone/6v9z)\n'  # https://coriolis.io/outfit/mamba?code=A2pftfFalidpsif37o7l7l0p0p040404040400B21J6g2o273w.Iw18aAMQ.Aw18WQ%3D%3D.H4sIAAAAAAAAA42Suy8EURTGz%2B7OjJ2d187sMwjBIBpZpUolOlFOuZ1CoyBRkNCpRWSLLbZQKhQKhdIfoFSoREShUIgIu%2Bc4Z2KuRzxmii%2Ff5PzOd899APYBQE9n6e6xWGdZAGfbBvAjdsGpBRA%2BZgAog3NCakJuseQvuNNrPBNVbxinLFZV0hqLF74Qle9ZKh0PoH7MnWOrNSZz2K%2FIjYSMVypvVpi84gppOJMs5zUfuH5yTUQ6zqrWHRbTRqLCvg8wIm5U3Li4CXFkYPNrSPuWaFpmpjxGKinHoskQejQAYBw5PGk8hPkJsn%2BDCmkgC5cVNMTyvW7%2FU3dwIalbhwZvZ%2BmVyBdXPzf5isSRi%2FMqpC17ltagsf4ODV%2B6DHlpoGIayP%2BYqdv6c7AA5WB6cs6wW%2BKk4iTA4B3%2FUwkXVciKrCSPxZeQMH4sNZxS9QMWV24v6DzxFRL88L0B9j%2FH3NECAAA%3D.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=PVE%20MAMBA
+              '• [PVP JellyFish](https://s.orbis.zone/6v9x)\n'  # https://coriolis.io/outfit/mamba?code=A0pktfFalidpsif31u1u1u2921040404040404p21E1E276b3w.Iw18WQ%3D%3D.EwRgDBld3mQ%3D.H4sIAAAAAAAAA4WSMUsDQRCFxyR3ueSSnHcmMSoq6hlIIwnYCIKFiDbWprSwESxSKAhiIVhaigpa%2BAMstLO0CNgISRkhiIWVWItonHHm5BYTFrziMbfzvbe7wwKaAPBtsNizFkA6hUSuFQfwDl%2BJ%2FDZ3qA8XBIqxdPZZrCb3nfIHUf4lxf0I5sOQzjaL438SFa6Zz459EeX2HYCp2iCTURxW5B6Ld2uHuOyU3cwxyetAMayEpLP7RuQ9PBGRgXPKf8AyLcctHrsACamSUk1INSkVmbjeHXL3TDQz%2F85JFlZVEt8BjOURAPMqzfvLSUYrHYYSvVBJAyV7oUUNZOOagjbCiwd3NmSOQ%2FdFPm7qT1JUkqpdSZTGJdW%2FkJDyDl%2Bsyf%2BFegJgvJ4BcGV6vogdzDGj9bSVp6HxOD2eAA%2BMv54We6j%2Fn%2BCWJtjVehrKc67xeLiiPKeyWpMXKuIfJbk%2FgKuqv8WSO%2BOQSIGHbsoLdB95kv5NXN43V5THksJPWDIyfu9SngSB5vsBTrLR7iEDAAA%3D.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=JellyFish
+              '• [PvP Multi-Cannon](https://s.orbis.zone/6v9s)\n'  # https://coriolis.io/outfit/mamba?code=A0pftfFdlidpsif37o7l7l2424040404040404p21E1E276b3w.AwRj4yvI.EwRgDBld3mQ%3D.H4sIAAAAAAAAA42SP0sDQRDFJ3%2FN5S4578zFoKCop2AjEWwEwUqwsU%2FpB7BIoZAihfZWImphkQ9goZ2FhUVKQUuFIH4ASxHROOObkyxREriFfczxfm9vllniESL6zkC6RxD7JklU2HeIvBoq%2F9omCt8SRJLgdUM2Ibm2ReSuvYuUWy78JJeNvwtxw0%2BR0tSXSKB%2B5TJNNFcfB5niCUM2emT0p1IzANmBI2le7kFu4xX%2B3bOIZHjVRA8g8w6LLBx7RJZWea1mtJrVSrK8%2FfeQ2xeRJe1ZclwzJ2FTWpvI1CaJshcFdBo1YfVBzjAoHwey40BOH5QbBhV4w0DnEL%2B6h9s94LuiE5luFzE7vVGoYqtIcWCmYzL3AzLuv0yER8HfzCMyMhoH8uJAPm8a6FSbqGOKnkp4mIc%2FxlvG34EEZ0glK12RrL4s7ymF7q%2FwmO0VVFLmRYOfQIrVD4y%2FpZMXGrB%2BAOTWbW8IAwAA.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=PvP%20Multi%20SF
+              '• Автор: <@270156067055468544>\n\n'
               
               # Автор Andrew An
-              "• [PvP Duel Multi-Cannon](https://s.orbis.zone/7s05)\n"  # https://coriolis.io/outfit/mamba?code=A4pktfFalidpsff37o7l7l2929040404040404p22b1F1E1E25.AwRj4yvI.EwRgDBldMUA%3D.H4sIAAAAAAAAA42SvUsDQRDFJ19nkkvucmcSEz%2Fwa1UIKGkDgpVoI6QzrWBpYaHYKJg%2BhYhiY2FhaWFpEaz8IyzEv8BaROOMbw6zIFjcFY%2FHzu%2Fezu4O8QgRfWcgg3OIe5YgKp4WiIIjuPDBJTL9JJEkeM2SJ5DsU47IX30Xqd74qCe5ausHEN98ipTfIBWt1%2B7TRPP7YyBTPD4kIyjapHxcAfSCRclwyyZ1IbkCi%2BQvAqJZdXPqFtQtqhOHdxRPQULNX2l%2BiNSjUpY7NglHorRul%2BlMEDl3RbQTbZeLA%2BXjQC5vW2gX0mjT7xVGB6uXlgAV4kBF3rTQlT6LHjdQMb086h6v2%2Fq13qP%2BGjYPEaLPMv3sAfLjQKU4UBAHCnnjb8%2B3Dsj2FxpXF5FGnYzyliX3IMnaQMTRAXFbeMbgFVLRTNPHdEqZG0PcfYR6M5OA1IU6WUad1HjZZl4qOYVMT%2FsM1JmezqjQP98PUypCHAMDAAA%3D.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=Duel%20Multi-Cannon
-              "• Автор: AndrewAn")
+              '• [PvP Duel Multi-Cannon](https://s.orbis.zone/7s05)\n'  # https://coriolis.io/outfit/mamba?code=A4pktfFalidpsff37o7l7l2929040404040404p22b1F1E1E25.AwRj4yvI.EwRgDBldMUA%3D.H4sIAAAAAAAAA42SvUsDQRDFJ19nkkvucmcSEz%2Fwa1UIKGkDgpVoI6QzrWBpYaHYKJg%2BhYhiY2FhaWFpEaz8IyzEv8BaROOMbw6zIFjcFY%2FHzu%2Fezu4O8QgRfWcgg3OIe5YgKp4WiIIjuPDBJTL9JJEkeM2SJ5DsU47IX30Xqd74qCe5ausHEN98ipTfIBWt1%2B7TRPP7YyBTPD4kIyjapHxcAfSCRclwyyZ1IbkCi%2BQvAqJZdXPqFtQtqhOHdxRPQULNX2l%2BiNSjUpY7NglHorRul%2BlMEDl3RbQTbZeLA%2BXjQC5vW2gX0mjT7xVGB6uXlgAV4kBF3rTQlT6LHjdQMb086h6v2%2Fq13qP%2BGjYPEaLPMv3sAfLjQKU4UBAHCnnjb8%2B3Dsj2FxpXF5FGnYzyliX3IMnaQMTRAXFbeMbgFVLRTNPHdEqZG0PcfYR6M5OA1IU6WUad1HjZZl4qOYVMT%2FsM1JmezqjQP98PUypCHAMDAAA%3D.EweloBhAOEoUwIYHMA28QgIwV3fEQA%3D%3D&bn=Duel%20Multi-Cannon
+              '• Автор: AndrewAn')
+    embed.set_image(url='attachment://zorgon-peterson-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Mamba // КОНЕЦ
@@ -738,6 +732,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Python
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="python", description="Список сборок для «Python»")
 async def python(ctx):
+    file = discord.File("sources\images\corporations\delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Python',
@@ -754,9 +749,10 @@ async def python(ctx):
               '• [Питон на дробашах Хадсона](https://s.orbis.zone/6v8_)\n'  # https://coriolis.io/outfit/python?code=A4pktkFfliduspf5papapa272704040404B13c1K1K2d2b296gv62i.Iw18eAMQ.Aw18RQ%3D%3D.H4sIAAAAAAAAA42SP0%2FCYBDGj1IQaGlpQ4H4J%2F6rkhg1ODI5mbA4mjAyOzlo4qCJH8DJODL4ARzcdGD0Azg6GCfjZIwDgzF45z3EvmEQQ4cnT3q%2Fu%2FeetyWeIqLvjMrgQsXpWUTFM5coaKsL7xyiuJ8ikhRvg7RBnqrkHrTTb3yKVF4UF4srZtKhih9%2FiZTfVKIrn6h2o53LB1Ul0zxtyOOEHJ5UPomUfNKK2LwFKI16q6%2F17quIZLiZtOZdFilcBkSLcEtwK3CrcJLlTrKu3%2Fn47d%2FEupLjPXM%2B0lOpTmRDQuxXQ7C52kDJ%2FAjp%2FksWJiYdbhsS6Wykz7RniLLXRb2iYXp3BHLHQUXeMVAXOfE2bBzpcfd5ovlHTyFvEsjnVgI5uMIAEp8XtFQaXwp414zeV7GQL4vv7DQ1WfCsEmF%2B3NP0EvGamXSr6i3MKgQX4geJ4aTCGwZa13Ee1g3g4ndsWh2p100dLrZ0iAj98fwAA%2Fj9yOUCAAA%3D.EweloBhBmSQUwIYHMA28QgIwVyKBQA%3D%3D&bn=Python%20Na%20drobashah%20Hudsona
               '• [Майнер Алмазов](https://s.orbis.zone/6v8u)\n'  # https://coriolis.io/outfit/python?code=A0pftiFflidussf52m2m2m--04040400050505CeCe32P9401l2i.Iw18eAMQ.Aw18RQ%3D%3D.H4sIAAAAAAAAA2P%2BJ8XAwPCXFUjwq%2Fz6%2F19oBzcDg0iNKAODxB2g4P%2F%2FDABJ8pCXIgAAAA%3D%3D.EweloBhBmUEZgA4QFMCGBzANikI4SEhQlA%3D%3D&bn=Python%20Miner%20LTD
               '• Автор: <@270156067055468544>')
+    embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Python // КОНЕЦ
@@ -765,6 +761,7 @@ async def python(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-6 Transporter
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type6", description="Список сборок для «Type-6 Transporter»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Type-6 Transporter",
@@ -777,9 +774,10 @@ async def mamba(ctx):
               "• [Type 6 для робиго](https://s.orbis.zone/6v8r)\n"
               "• [Майнер пейнита](https://s.orbis.zone/6v8p)\n"
               "• Автор: <@270156067055468544>")
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-6 Transporter // КОНЕЦ
@@ -831,6 +829,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Corvette
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="corvette", description="Список сборок для «Federal Corvette»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\core-dynamics-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Federal Corvette",
@@ -859,9 +858,10 @@ async def mamba(ctx):
               # Автор Painbeaver
               "• [AX Corvette II](https://s.orbis.zone/1gg5)\n"
               "• Автор: Painbeaver\n\n")
+    embed.set_image(url='attachment://core-dynamics-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Corvette // КОНЕЦ
@@ -870,6 +870,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Cutter
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="cutter", description="Список сборок для «Imperial Cutter»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\gutamaya-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Imperial Cutter",
@@ -901,9 +902,10 @@ async def mamba(ctx):
               
               "• [GOLD RUSH Майнер](https://s.orbis.zone/5rbv)\n"
               "• Автор: <@402878540917374976>")
+    embed.set_image(url='attachment://gutamaya-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Cutter // КОНЕЦ
@@ -912,6 +914,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-7 Transporter
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type7", description="Список сборок для «Type-7 Transporter»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Type-7 Transporter',
@@ -925,9 +928,10 @@ async def mamba(ctx):
               '• [T7 Майнер Алмазов](https://s.orbis.zone/6v90)\n'
               '• [Т7 исследователь](https://s.orbis.zone/3qk-)\n'
               '• Автор: <@270156067055468544>')
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-7 Transporter // КОНЕЦ
@@ -936,6 +940,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-9 Heavy
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type9", description="Список сборок для «Type-9 Heavy»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Type-9 Heavy',
@@ -953,9 +958,10 @@ async def mamba(ctx):
               '• [Грузовой](https://s.orbis.zone/3q_a)\n'
               '• [Miner 3.3](https://s.orbis.zone/3q_d)\n'
               '• Автор: <@270156067055468544>')
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-9 Heavy // КОНЕЦ
@@ -964,6 +970,7 @@ async def mamba(ctx):
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-10 Defender
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type10", description="Список сборок для «Type-10 Defender»")
 async def mamba(ctx):
+    file = discord.File("sources\images\corporations\lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Type-10 Defender',
@@ -994,9 +1001,10 @@ async def mamba(ctx):
               "• [Т10 афк двухпоточник](https://s.orbis.zone/7r7a)\n"
               "• [Т10 афк призма](https://s.orbis.zone/7r7b)\n"
               "• Автор: HolyFire")
+    embed.set_image(url='attachment://lakon-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-10 Defender // КОНЕЦ
