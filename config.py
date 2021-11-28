@@ -17,7 +17,7 @@ assert environment_type in ['test', 'prod'], f"Wrong environment type: {environm
 app_short_description = 'E.D.O.K. — Elite Dangerous Outfitting Keeper'
 
 # Полное описание приложения:
-app_full_description = 'Приложение для вывода списка с ссылками на сборки кораблей с сервиса Coriolis EDCD Edition.'
+app_full_description = 'Приложение для вывода списка сборок кораблей созданными в сервисе «Coriolis EDCD Edition» игроками русскоязычного сообщества игры «Elite Dangerous».'
 
 # Приглашение на сервер поддержки
 app_support_server_invite = 'https://discord.gg/HFqmXPvMxC'
