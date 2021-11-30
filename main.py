@@ -209,6 +209,9 @@ embed_ships_list.add_field(
 
 # region •••••••••••••••• СОЗДАЁМ ГРУППУ КНОПОК ДЛЯ СПИСКИ КОРАБЛЕЙ
 class Button_group_for_ships(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
     @discord.ui.button(
         label='СПИСОК КОРАБЛЕЙ',
         custom_id="button_ships_list",
@@ -225,16 +228,17 @@ class Button_group_for_ships(discord.ui.View):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СООБЩЕНИЯ SHIPS LIST + ННОПКИ SHIPS LIST
 @ships.command(default_permission=False, name="list", description="Список команд для вызова сборок по кораблям.")
 async def ships_show(ctx):
-    await ctx.respond(embed=embed_ships_list, view=menu_ships(), ephemeral=True)
+    await ctx.respond(embed=embed_ships_list, ephemeral=True)
+    # await ctx.respond(embed=embed_ships_list, view=menu_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СООБЩЕНИЯ SHIPS LIST + ННОПКИ SHIPS LIST // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra Mk III
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra Mk III (Faulcon DeLacy)
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="cobramk3", description="Список сборок для «Cobra Mk III»")
 async def cobramk3(ctx):
-    file = discord.File("sources\images\corporations\delacy-horizon.png")
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Cobra Mk III",
@@ -265,14 +269,14 @@ async def cobramk3(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra Mk III // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra MkIV
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra MkIV (Faulcon DeLacy)
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Cobra MkIV // КОНЕЦ
 
 
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Diamondback Explorer
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="dbe", description="Список сборок для «Diamondback Explorer»")
 async def dbe(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Diamondback Explorer",
@@ -305,7 +309,7 @@ async def dbe(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Dolphin
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="dolphin", description="Список сборок для «Dolphin»")
 async def dolphin(ctx):
-    file = discord.File("sources\images\corporations\saud-kruger-horizon.png")
+    file = discord.File("sources/images/corporations/saud-kruger-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Dolphin",
@@ -331,7 +335,7 @@ async def dolphin(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Courier
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="courier", description="Список сборок для «Imperial Courier»")
 async def courier(ctx):
-    file = discord.File("sources\images\corporations\gutamaya-horizon.png")
+    file = discord.File("sources/images/corporations/gutamaya-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Imperial Courier",
@@ -373,10 +377,10 @@ async def courier(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Eagle // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder (Faulcon DeLacy)
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="sidewinder", description="Список сборок для «Sidewinder»")
 async def sidewinder(ctx):
-    file = discord.File("sources\images\corporations\delacy-horizon.png")
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Sidewinder",
@@ -394,11 +398,11 @@ async def sidewinder(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Sidewinder // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper (Faulcon DeLacy)
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper MkIV
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper MkIV (Faulcon DeLacy)
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Viper MkIV // КОНЕЦ
 
 
@@ -441,7 +445,7 @@ async def vulture(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Alliance Challenger
 @ships.command(default_permission=False, name="challenger", description="Список сборок для «Alliance Challenger»")
 async def challenger(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Alliance Challenger",
@@ -523,7 +527,7 @@ async def crusader(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Asp Explorer
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="aspe", description="Список сборок для «Asp Explorer»")
 async def aspe(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Asp Explorer",
@@ -556,7 +560,7 @@ async def aspe(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Assault Ship
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="fas", description="Список сборок для «Federal Assault Ship»")
 async def fas(ctx):
-    file = discord.File("sources\images\corporations\core-dynamics-horizon.png")
+    file = discord.File("sources/images/corporations/core-dynamics-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Federal Assault Ship",
@@ -600,7 +604,7 @@ async def fas(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Fer-de-Lance
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="fdl", description="Список сборок для «Fer-de-Lance»")
 async def fdl(ctx):
-    file = discord.File("sources\images\corporations\delacy-horizon.png")
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Fer-de-Lance",
@@ -633,10 +637,10 @@ async def fdl(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Keelback // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII (Faulcon DeLacy)
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="krait", description="Список сборок для «Krait MkII»")
 async def krait(ctx):
-    file = discord.File("sources\images\corporations\delacy-horizon.png")
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Krait MkII",
@@ -663,10 +667,10 @@ async def krait(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait MkII // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Krait Phantom (Faulcon DeLacy)
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="phantom", description="Список сборок для «Krait Phantom»")
 async def phantom(ctx):
-    file = discord.File("sources\images\corporations\delacy-horizon.png")
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Krait Phantom",
@@ -702,7 +706,7 @@ async def phantom(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Mamba
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="mamba", description="Список сборок для «Mamba»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\zorgon-peterson-horizon.png")
+    file = discord.File("sources/images/corporations/zorgon-peterson-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Mamba',
@@ -729,10 +733,10 @@ async def mamba(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Mamba // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Python
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Python (Faulcon DeLacy)
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="python", description="Список сборок для «Python»")
 async def python(ctx):
-    file = discord.File("sources\images\corporations\delacy-horizon.png")
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Python',
@@ -761,7 +765,7 @@ async def python(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-6 Transporter
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type6", description="Список сборок для «Type-6 Transporter»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Type-6 Transporter",
@@ -783,9 +787,10 @@ async def mamba(ctx):
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-6 Transporter // КОНЕЦ
 
 
-# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Anaconda
+# region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Anaconda (Faulcon DeLacy)
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="anaconda", description="Список сборок для «Anaconda»")
 async def mamba(ctx):
+    file = discord.File("sources/images/corporations/delacy-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Anaconda",
@@ -819,8 +824,9 @@ async def mamba(ctx):
               "• [Bliz 2KDPS](https://s.orbis.zone/6o54)\n"
               "• Автор: <@283578404274700289>")
     # endregion
+    embed.set_image(url='attachment://delacy-horizon.png')
     # Отправляем скрытое сообщение
-    await ctx.respond(embed=embed, view=Button_group_for_ships(), ephemeral=True)
+    await ctx.respond(file=file, embed=embed, view=Button_group_for_ships(), ephemeral=True)
 
 
 # endregion ••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Anaconda // КОНЕЦ
@@ -829,7 +835,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Federal Corvette
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="corvette", description="Список сборок для «Federal Corvette»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\core-dynamics-horizon.png")
+    file = discord.File("sources/images/corporations/core-dynamics-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Federal Corvette",
@@ -870,7 +876,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Imperial Cutter
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="cutter", description="Список сборок для «Imperial Cutter»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\gutamaya-horizon.png")
+    file = discord.File("sources/images/corporations/gutamaya-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title="Imperial Cutter",
@@ -914,7 +920,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-7 Transporter
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type7", description="Список сборок для «Type-7 Transporter»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Type-7 Transporter',
@@ -940,7 +946,7 @@ async def mamba(ctx):
 # region •••••••••••••••• КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-9 Heavy
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type9", description="Список сборок для «Type-9 Heavy»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Type-9 Heavy',
@@ -970,7 +976,7 @@ async def mamba(ctx):
 # ------------- КОМАНДА ОТОБРАЖЕНИЯ СБОРОК Type-10 Defender
 @ships.command(guild_ids=guild_ids_for_slash(), default_permission=False, name="type10", description="Список сборок для «Type-10 Defender»")
 async def mamba(ctx):
-    file = discord.File("sources\images\corporations\lakon-horizon.png")
+    file = discord.File("sources/images/corporations/lakon-horizon.png")
     # region • Создаём сообщение
     embed = discord.Embed(
         title='Type-10 Defender',
