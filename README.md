@@ -18,7 +18,7 @@
 </p>
 
 <div align="center">
-   <a href="https://discord.com/oauth2/authorize?client_id=827209985481244683&scope=bot%20applications.commands">
+   <a href="https://discord.com/oauth2/authorize?client_id=876090968368107550&scope=bot%20applications.commands">
       <kbd>Подключить приложение к серверу</kbd>
    </a>
 </div>
