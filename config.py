@@ -9,6 +9,7 @@ token = environ['APP_TOKEN']
 environment_type = environ['APP_ENVIRONMENT'].lower()
 assert environment_type in ['test', 'prod'], f"Wrong environment type: {environment_type}, must be 'test' or 'prod'"
 
+
 # endregion ••••••••••••• ОСНОВНЫЕ НАСТРОЙКИ // КОНЕЦ
 
 
@@ -24,5 +25,6 @@ app_support_server_invite = 'https://discord.gg/HFqmXPvMxC'
 
 # Ссылка на репозиторий на GitHub
 app_github_url = 'https://github.com/LostVault/edok'
+
 
 # endregion ••••••••••••• ОСНОВНАЯ ИНФОРМАЦИЯ // КОНЕЦ
