@@ -267,7 +267,11 @@ async def cobramk3(ctx):
               
               # Автор Klemyr
               "• [Быстрая Кобра (Boost 608 m/s)](https://s.orbis.zone/2_xu)\n"  # https://coriolis.io/outfit/cobra_mk_iii?code=A4pataFaladasaf427270p0p0404322bB3v6m3m32525.Iw1%2FgDJQ.IzAM4yLUXI%3D%3D.H4sIAAAAAAAAA42RO0sDQRSFbx67JNkkmyx5%2BUDUrBaidhaCaCmIiGBhQAvtRBsLiyDaWdiJjYWVgqWFpaWFf8FKC2sfCBKCaDLHc4Vd0SpbHM7O%2FeaemTtibBFpW5TWEcW7fwIyaQPkl%2BMifldCxDmnQ8TMKBlRcp%2FiKlS6YinR4CKiphR22tG6%2FwlUtF7o%2BwKKx65IdbtMMma6Q7KumddOgD9wsbBXJGSZyQAa0qThlZxIUl1K3YC6QXWwzVpAejePgFt%2FAcanmgASphYmxShWrUfEvszwJJoUX2Umkp1AKbMUQJWDBmDt0tobH0D18BkoZ3UEzi%2Fkzbd5nQklX6Mk595Jrr%2BR3OIv0mY2zDzVYS1yRJXbpEj%2Bgg%2FiqzgqyHRMumYsJE8o2SZnnx9tAf40L%2BOoQ84shNCmtjvjs%2FBEJLWx%2F%2FNABTPyp5NzR5vt7yWkztM9vjoUOyYh%2F75vsJ9Vm3oCAAA%3D.EweloBhBGA2EoFMCGBzANokMK4fiIA%3D%3D&bn=Valor%20(Fast%20PVE)
-              "• Автор: <@189334900405436416>")
+              "• Автор: <@189334900405436416>\n\n"
+    
+              # Автор Неизвестен
+              "• [Кобра Шахтёр](https://s.orbis.zone/j63l)\n"  # https://coriolis.io/outfit/cobra_mk_iii?code=A0p0tdFdldd8sdf43M3R3O2l3J-030303C52r1oP42i.Iw18cQ%3D%3D.Aw1%2BgjKQ..EweloBhBGA2GAcICmBDA5gG2SGF8hRFA
+              "• Автор: Неизвестен")
     embed.set_image(url='attachment://delacy-horizon.png')
     # endregion
     # Отправляем скрытое сообщение
